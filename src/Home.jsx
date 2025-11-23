@@ -21,7 +21,8 @@ import {
   Box,
   User,
   FileText,
-  Monitor
+  Monitor,
+  Send
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { LiquidCard, NavItem, TechTile, SectionHeader, SocialButton } from './components/UI';
@@ -113,6 +114,10 @@ export default function Home() {
                         <Monitor size={16} />
                         <span className="text-xs font-bold uppercase tracking-widest">Uses</span>
                     </Link>
+                    <Link to="/contact" className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-all">
+                        <Send size={16} />
+                        <span className="text-xs font-bold uppercase tracking-widest">Contact</span>
+                    </Link>
                </div>
              </div>
 
@@ -161,6 +166,7 @@ export default function Home() {
               <div className="flex gap-4 mt-4">
                   <Link to="/blog" className="text-xs font-bold uppercase tracking-widest text-purple-400">Blog</Link>
                   <Link to="/uses" className="text-xs font-bold uppercase tracking-widest text-purple-400">Uses</Link>
+                  <Link to="/contact" className="text-xs font-bold uppercase tracking-widest text-purple-400">Contact</Link>
               </div>
           </div>
 

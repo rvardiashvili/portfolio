@@ -5,6 +5,7 @@ import Home from './Home';
 import Blog from './Blog';
 import BlogPostPage from './BlogPostPage';
 import Uses from './Uses';
+import Contact from './Contact';
 
 export default function App() {
   const location = useLocation();
@@ -62,6 +63,7 @@ export default function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/uses" element={<Uses />} />
+            <Route path="/contact" element={<Contact />} />
          </Routes>
       </div>
     </div>
