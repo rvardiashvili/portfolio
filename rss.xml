@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Rati Vardiashvili's Blog</title>
+  <link>https://rvardiashvili.github.io/portfolio</link>
+  <description>Thoughts on software engineering, distributed systems, and data engineering.</description>
+  <atom:link href="https://rvardiashvili.github.io/portfolio/rss.xml" rel="self" type="application/rss+xml" />
+  <language>en-us</language>
+  <lastBuildDate>Sun, 23 Nov 2025 23:12:24 GMT</lastBuildDate>
+  <item>
+    <title><![CDATA[Magic Systems and Operating Systems]]></title>
+    <link>https://rvardiashvili.github.io/portfolio/#/blog/magic-and-code</link>
+    <guid isPermaLink="true">https://rvardiashvili.github.io/portfolio/#/blog/magic-and-code</guid>
+    <pubDate>Mon, 24 Nov 2025 00:00:00 GMT</pubDate>
+    <description><![CDATA[Why Brandon Sanderson would have made a great backend engineer.]]></description>
+  </item>
+  <item>
+    <title><![CDATA[Scaling Satellite Vision: My Thesis Journey with a Model-Agnostic Analysis Pipeline]]></title>
+    <link>https://rvardiashvili.github.io/portfolio/#/blog/thesis-journey-bigearthnet-v2</link>
+    <guid isPermaLink="true">https://rvardiashvili.github.io/portfolio/#/blog/thesis-journey-bigearthnet-v2</guid>
+    <pubDate>Mon, 24 Nov 2025 00:00:00 GMT</pubDate>
+    <description><![CDATA[An ongoing technical retrospective on building a scalable, plug-and-play analysis pipeline for satellite imagery, actively in development for my Bachelor's thesis.]]></description>
+  </item>
+  <item>
+    <title><![CDATA[Why Every Developer Needs a 'Uses' Page]]></title>
+    <link>https://rvardiashvili.github.io/portfolio/#/blog/why-uses-page</link>
+    <guid isPermaLink="true">https://rvardiashvili.github.io/portfolio/#/blog/why-uses-page</guid>
+    <pubDate>Sun, 23 Nov 2025 00:00:00 GMT</pubDate>
+    <description><![CDATA[Inspired by Wes Bos and others, here's why documenting your tools is valuable.]]></description>
+  </item>
+  <item>
+    <title><![CDATA[Why a Personal Portfolio is Your Best Investment]]></title>
+    <link>https://rvardiashvili.github.io/portfolio/#/blog/hello-world</link>
+    <guid isPermaLink="true">https://rvardiashvili.github.io/portfolio/#/blog/hello-world</guid>
+    <pubDate>Fri, 21 Nov 2025 00:00:00 GMT</pubDate>
+    <description><![CDATA[More than just a resume: a look at why every developer needs a personal website.]]></description>
+  </item>
+</channel>
+</rss>
