@@ -27,6 +27,14 @@ import {
   Layout
 } from 'lucide-react';
 
+import pfpSrc from './assets/media/pfp.png';
+import photo1 from './assets/media/unnamed.jpg';
+import photo2 from './assets/media/unnamed (1).jpg';
+import photo3 from './assets/media/unnamed (2).jpg';
+import photo4 from './assets/media/unnamed (3).jpg';
+import photo5 from './assets/media/DSC01653.JPG';
+import photo6 from './assets/media/IMG_1097.JPG';
+
 /* --- Data --- */
 
 const PERSONAL_INFO = {
@@ -112,12 +120,12 @@ const BOOKS = [
 ];
 
 const PHOTOS = [
-  { id: 1, src: "/media/unnamed.jpg", desc: "Night Market", color: "bg-red-900" },
-  { id: 2, src: "/media/unnamed (1).jpg", desc: "Silhouette", color: "bg-orange-900" },
-  { id: 3, src: "/media/unnamed (2).jpg", desc: "Fog", color: "bg-slate-800" },
-  { id: 4, src: "/media/unnamed (3).jpg", desc: "Archives", color: "bg-yellow-900" },
-  { id: 5, src: "/media/DSC01653.JPG", desc: "Perspective", color: "bg-blue-900" },
-  { id: 6, src: "/media/IMG_1097.JPG", desc: "Moment", color: "bg-green-900" }
+  { id: 1, src: photo1, desc: "Night Market", color: "bg-red-900" },
+  { id: 2, src: photo2, desc: "Silhouette", color: "bg-orange-900" },
+  { id: 3, src: photo3, desc: "Fog", color: "bg-slate-800" },
+  { id: 4, src: photo4, desc: "Archives", color: "bg-yellow-900" },
+  { id: 5, src: photo5, desc: "Perspective", color: "bg-blue-900" },
+  { id: 6, src: photo6, desc: "Moment", color: "bg-green-900" }
 ];
 
 /* --- BACKGROUND: TWILIGHT STUDIO (Colorful but Balanced) --- */
@@ -409,7 +417,7 @@ export default function Portfolio() {
                     <div className="relative mb-4 group cursor-pointer">
                        <div className="w-24 h-24 rounded-full bg-gradient-to-br from-slate-800 to-black border-2 border-white/10 flex items-center justify-center shadow-xl overflow-hidden relative z-10">
                           <img 
-                            src="/media/pfp.png" 
+                            src={pfpSrc} 
                             alt="Rati Vardiashvili" 
                             className="w-full h-full object-cover"
                           />
@@ -425,9 +433,9 @@ export default function Portfolio() {
                        Software Engineer
                     </p>
                     
-                    <div className="px-3 py-1 rounded-full bg-white/5 border border-white/10 inline-flex items-center gap-2">
+                    <div className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 inline-flex items-center gap-2">
                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
-                       <span className="text-[10px] font-mono text-slate-200 uppercase tracking-widest">Available for Hire</span>
+                       <span className="text-[10px] font-mono text-slate-200 uppercase tracking-widest">Available</span>
                     </div>
                  </div>
 
@@ -470,7 +478,7 @@ export default function Portfolio() {
             <div className="lg:hidden flex flex-col items-center text-center mb-8 mt-8">
                 <div className="relative mb-6">
                     <div className="w-28 h-28 rounded-full bg-gradient-to-br from-slate-800 to-black border-2 border-white/10 flex items-center justify-center shadow-xl overflow-hidden">
-                        <img src="/media/pfp.png" alt="Rati Vardiashvili" className="w-full h-full object-cover" />
+                        <img src={pfpSrc} alt="Rati Vardiashvili" className="w-full h-full object-cover" />
                     </div>
                     <div className="absolute inset-0 rounded-full border-2 border-emerald-500/50 animate-pulse"></div>
                 </div>
