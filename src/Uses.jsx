@@ -1,6 +1,7 @@
 import React from 'react';
 import { Monitor, Cpu, HardDrive, Terminal, Type, Command, Coffee, MousePointer, Layers, ArrowLeft, Gem } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from './components/SEO';
 
 const UsesSection = ({ title, icon: Icon, items }) => (
   <div className="mb-12">
@@ -43,6 +44,10 @@ export default function Uses() {
 
   return (
     <div className="max-w-4xl mx-auto p-8 text-white min-h-screen">
+      <SEO 
+        title="Uses" 
+        description="Hardware, software, and tools I use to build software." 
+      />
       <Link to="/" className="inline-flex items-center gap-2 text-slate-400 hover:text-white mb-8 transition-colors text-sm font-bold uppercase tracking-widest">
         <ArrowLeft size={16} /> Back to Home
       </Link>

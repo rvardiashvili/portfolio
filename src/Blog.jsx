@@ -2,10 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen, Calendar, ArrowRight, ArrowLeft } from 'lucide-react';
 import { posts } from './posts';
+import SEO from './components/SEO';
 
 export default function Blog() {
   return (
     <div className="max-w-4xl mx-auto p-8 text-white min-h-screen">
+      <SEO 
+        title="Blog" 
+        description="Thoughts on software engineering, distributed systems, and my journey as a developer." 
+      />
       <Link to="/" className="inline-flex items-center gap-2 text-slate-400 hover:text-white mb-8 transition-colors text-sm font-bold uppercase tracking-widest">
         <ArrowLeft size={16} /> Back to Home
       </Link>

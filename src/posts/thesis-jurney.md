@@ -1,13 +1,13 @@
 ---
 title: "Scaling Satellite Vision: My Thesis Journey with a Model-Agnostic Analysis Pipeline"
 date: "2025-11-24"
-description: "A technical retrospective on building a scalable, plug-and-play analysis pipeline for satellite imagery, currently a work in progress."
+description: "An ongoing technical retrospective on building a scalable, plug-and-play analysis pipeline for satellite imagery, actively in development for my Bachelor's thesis."
 slug: "thesis-journey-bigearthnet-v2"
 ---
 
 # Scaling Satellite Vision: My Thesis Journey with a Model-Agnostic Satellite Analysis Pipeline
 
-*A technical retrospective on building a scalable, plug-and-play analysis pipeline for satellite imagery, currently a work in progress.*
+*A technical retrospective on building a scalable, plug-and-play analysis pipeline for satellite imagery, actively in development for my Bachelor's thesis.*
 
 ## Introduction
 
@@ -70,11 +70,23 @@ With the engine running smoothly, I focused on features and storage efficiency:
     -   **Gap Maps:** showing the confidence margin between the top two classes.
     -   **Class Maps:** The final predictions.
 
-## Current Status
+## What I Learned So Far
 
-Today, the project is a fully pipelined CLI tool. It includes a **Benchmark Mode** to stress-test performance across multiple tiles and generates an interactive **HTML Viewer** to inspect results immediately.
+Building this pipeline has been a crash course in systems engineering for data science. Here are the key takeaways:
 
-What started as a script reading small patches is now a system that can digest entire satellite swathes, providing researchers with the geospatial insights they need without the memory headaches.
+1.  **Memory is not Infinite:** In Python, it's easy to forget about memory management until your 32GB RAM server crashes. Streaming data via windows is not just an optimization; it's a necessity for geospatial data.
+2.  **Feed the Beast (GPU):** A fast model is useless if it spends 50% of its time waiting for data. Decoupling I/O from inference using multiprocessing was the single biggest performance booster.
+3.  **Start Simple, Scale Later:** If I had tried to build the perfect windowed, multi-process, model-agnostic system on day one, I would never have started. Iterating from "naive stitching" to "optimized pipeline" taught me *why* complexity was needed.
+
+## Current Status & The Final Push
+
+Today, the project is a fully pipelined CLI tool with benchmarking and visualization capabilities. However, the work isn't done.
+
+I am currently actively working on the **final major addition: True Model Agnosticism**. 
+
+The goal is to completely decouple the pipeline from specific model architectures. By implementing a standardized adapter interface, the system will allow researchers to plug in *any* PyTorch or TensorFlow model without touching the core pipeline code. This flexibility is the final key to making this tool truly useful for the wider research community.
+
+This ongoing work is central to my upcoming thesis submission in December 2025.
 
 ---
 *Check out the code and history on [GitHub](https://github.com/rvardiashvili/GeoTiff-Scalable-Analysis-Pipeline).*

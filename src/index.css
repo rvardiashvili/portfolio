@@ -2,39 +2,127 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom Scrollbar for Desktop */
-.custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1e1b29;
 }
 
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1e1b29; 
+}
+::-webkit-scrollbar-thumb {
+  background: #334155; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569; 
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+/* --- TYPEWRITER EFFECT --- */
+.typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  border-right: .15em solid #fb923c; /* The orange cursor */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .75s step-end infinite;
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
 
-/* Firefox */
-.custom-scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #fb923c; }
 }
 
-/* --- Hide on Mobile --- */
-/* Hide on screens smaller than lg breakpoint (1024px) */
-@media (max-width: 1023px) {
-  .custom-scrollbar::-webkit-scrollbar {
-    display: none;
+
+/* --- PRINT STYLES (RESUME MODE) --- */
+@media print {
+  /* Reset Page */
+  @page {
+    margin: 1cm;
+    size: auto;
   }
-  .custom-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+
+  /* Hide UI Elements */
+  canvas, 
+  nav, 
+  button, 
+  .fixed, 
+  .absolute, 
+  .no-print,
+  [role="dialog"],
+  #command-palette-hint {
+    display: none !important;
+  }
+
+  /* Reset Body */
+  body, #root, #main-scroll-container {
+    background-color: white !important;
+    color: black !important;
+    height: auto !important;
+    width: auto !important;
+    overflow: visible !important;
+    position: static !important;
+    display: block !important;
+  }
+
+  /* Typography Fixes */
+  * {
+    color: black !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    border-color: #000 !important;
+  }
+
+  /* Layout Fixes */
+  .flex-col, .flex-row, .grid {
+    display: block !important;
+  }
+
+  /* Card Resets */
+  .p-8, .p-6 {
+    padding: 0 !important;
+    margin-bottom: 2rem !important;
+    border: none !important;
+  }
+
+  /* Link Expansion */
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666 !important;
+  }
+
+  /* Specific Section Tweaks */
+  h1 { font-size: 24pt !important; margin-bottom: 0.5cm !important; border-bottom: 2px solid black; }
+  h2 { font-size: 18pt !important; margin-top: 1cm !important; margin-bottom: 0.25cm !important; border-bottom: 1px solid #ccc; }
+  h3 { font-size: 14pt !important; font-weight: bold !important; }
+  p { font-size: 11pt !important; line-height: 1.4 !important; }
+  
+  /* Hide specific visual-only elements */
+  .animate-pulse, .bg-gradient-to-br {
+    display: none !important;
+  }
+  
+  /* Force showing the left sidebar content (Profile) as top header */
+  .hidden.lg\:flex {
+    display: block !important;
+    width: 100% !important;
+    border-bottom: 2px solid black;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 }

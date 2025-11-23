@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Send, Mail, User, MessageSquare, Phone, ArrowLeft, CheckCircle, AlertCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from './components/SEO';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -69,6 +70,10 @@ export default function Contact() {
 
   return (
     <div className="max-w-4xl mx-auto p-8 text-white min-h-screen flex flex-col">
+      <SEO 
+        title="Contact" 
+        description="Get in touch with Rati Vardiashvili." 
+      />
       <Link to="/" className="inline-flex items-center gap-2 text-slate-400 hover:text-white mb-8 transition-colors text-sm font-bold uppercase tracking-widest w-fit">
         <ArrowLeft size={16} /> Back to Home
       </Link>

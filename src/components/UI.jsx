@@ -189,11 +189,12 @@ export const SectionHeader = ({ title, icon: Icon }) => (
   </div>
 );
 
-export const SocialButton = ({ icon: Icon, href }) => (
+export const SocialButton = ({ icon: Icon, href, label }) => (
   <a 
     href={href} 
     target="_blank" 
     rel="noreferrer"
+    aria-label={label || "Social Link"}
     className="text-slate-400 hover:text-white hover:scale-110 transition-all p-2"
   >
     <Icon size={20} />

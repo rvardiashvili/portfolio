@@ -22,11 +22,13 @@ import {
   User,
   FileText,
   Monitor,
-  Send
+  Send,
+  Clock
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { LiquidCard, NavItem, TechTile, SectionHeader, SocialButton } from './components/UI';
 import { PERSONAL_INFO, EDUCATION, EXPERIENCE, PROJECTS, BOOKS, PHOTOS } from './data';
+import SEO from './components/SEO';
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('profile');
@@ -62,6 +64,7 @@ export default function Home() {
 
   return (
     <div className="relative z-10 w-full max-w-[1440px] mx-auto p-4 md:p-8 lg:p-12 h-full flex gap-8 items-start h-screen">
+      <SEO />
       
       {/* --- LEFT SIDEBAR (Sticky, No Scroll) --- */}
       <div className="hidden lg:flex w-80 shrink-0 flex-col gap-6 h-full">
@@ -89,6 +92,12 @@ export default function Home() {
                      Software Engineer
                   </p>
                   
+                  <div className="mb-4 h-[20px]"> 
+                    <div className="typewriter inline-block text-xs font-mono text-orange-400">
+                        {PERSONAL_INFO.tagline}
+                    </div>
+                  </div>
+                  
                   <div className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 inline-flex items-center gap-2">
                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
                      <span className="text-[10px] font-mono text-slate-200 uppercase tracking-widest">Available</span>
@@ -106,6 +115,10 @@ export default function Home() {
 
                {/* New Pages Nav */}
                <div className="pt-4 border-t border-white/10 space-y-1">
+                    <Link to="/now" className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-all">
+                        <Clock size={16} />
+                        <span className="text-xs font-bold uppercase tracking-widest">Now</span>
+                    </Link>
                     <Link to="/blog" className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-all">
                         <FileText size={16} />
                         <span className="text-xs font-bold uppercase tracking-widest">Blog</span>
@@ -125,9 +138,9 @@ export default function Home() {
              <div className="space-y-6">
                 {/* Clean Social Icons */}
                 <div className="flex gap-6 justify-center">
-                  <SocialButton href={PERSONAL_INFO.github} icon={Github} />
-                  <SocialButton href={PERSONAL_INFO.linkedin} icon={Linkedin} />
-                  <SocialButton href={`mailto:${PERSONAL_INFO.email}`} icon={Mail} />
+                  <SocialButton href={PERSONAL_INFO.github} icon={Github} label="GitHub Profile" />
+                  <SocialButton href={PERSONAL_INFO.linkedin} icon={Linkedin} label="LinkedIn Profile" />
+                  <SocialButton href={`mailto:${PERSONAL_INFO.email}`} icon={Mail} label="Email Me" />
                 </div>
                 {/* Clean Resume Button */}
                 <a href={PERSONAL_INFO.cv_link} className="flex items-center justify-center gap-2 w-full py-3 bg-white/10 hover:bg-white text-white hover:text-black border border-white/10 rounded-lg transition-all duration-300 text-xs font-bold uppercase tracking-wider shadow-lg group">
@@ -164,6 +177,7 @@ export default function Home() {
               
               {/* Mobile Nav Links */}
               <div className="flex gap-4 mt-4">
+                  <Link to="/now" className="text-xs font-bold uppercase tracking-widest text-purple-400">Now</Link>
                   <Link to="/blog" className="text-xs font-bold uppercase tracking-widest text-purple-400">Blog</Link>
                   <Link to="/uses" className="text-xs font-bold uppercase tracking-widest text-purple-400">Uses</Link>
                   <Link to="/contact" className="text-xs font-bold uppercase tracking-widest text-purple-400">Contact</Link>
@@ -346,9 +360,9 @@ export default function Home() {
           {/* --- MOBILE CONNECT --- */}
           <div className="lg:hidden mt-8 mb-8 space-y-8 border-t border-white/10 pt-8">
               <div className="flex gap-6 justify-center">
-                <SocialButton href={PERSONAL_INFO.github} icon={Github} />
-                <SocialButton href={PERSONAL_INFO.linkedin} icon={Linkedin} />
-                <SocialButton href={`mailto:${PERSONAL_INFO.email}`} icon={Mail} />
+                <SocialButton href={PERSONAL_INFO.github} icon={Github} label="GitHub Profile" />
+                <SocialButton href={PERSONAL_INFO.linkedin} icon={Linkedin} label="LinkedIn Profile" />
+                <SocialButton href={`mailto:${PERSONAL_INFO.email}`} icon={Mail} label="Email Me" />
               </div>
               <a href={PERSONAL_INFO.cv_link} className="flex items-center justify-center gap-2 w-full py-3 bg-white/10 hover:bg-white text-white hover:text-black border border-white/10 rounded-lg transition-all duration-300 text-xs font-bold uppercase tracking-wider shadow-lg group">
                    <Download size={16} className="group-hover:-translate-y-0.5 transition-transform" /> 
