@@ -19,4 +19,4 @@ A "uses" page is a dedicated section of a developer's website where they list th
 2.  **Inspiration:** I'm always looking for new tools to improve my workflow. Seeing what other experienced engineers use is a great way to discover them.
 3.  **Reference:** It serves as a personal reference. If I ever need to set up a new machine, I can just look at my own list!
 
-Check out my [Uses](/#/uses) page to see my setup.
+Check out my [Uses](/portfolio/#/uses) page to see my setup.
