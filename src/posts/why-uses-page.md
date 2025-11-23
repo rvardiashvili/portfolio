@@ -1,6 +1,6 @@
 ---
 title: "Why Every Developer Needs a 'Uses' Page"
-date: "2025-11-24"
+date: "2025-11-23"
 description: "Inspired by Wes Bos and others, here's why documenting your tools is valuable."
 slug: "why-uses-page"
 ---

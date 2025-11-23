@@ -1,6 +1,6 @@
 ---
 title: "Magic Systems and Operating Systems"
-date: "2025-11-25"
+date: "2025-11-24"
 description: "Why Brandon Sanderson would have made a great backend engineer."
 slug: "magic-and-code"
 ---

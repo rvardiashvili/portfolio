@@ -1,6 +1,6 @@
 ---
 title: "Why a Personal Portfolio is Your Best Investment"
-date: "2025-11-23"
+date: "2025-11-21"
 description: "More than just a resume: a look at why every developer needs a personal website."
 slug: "hello-world"
 ---
