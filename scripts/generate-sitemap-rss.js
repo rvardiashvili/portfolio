@@ -28,7 +28,7 @@ const getPosts = () => {
         const [key, ...value] = line.split(':');
         if (key && value.length) {
             let val = value.join(':').trim();
-            if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'"') && val.endsWith("''"))) {
+            if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
                 val = val.slice(1, -1);
             }
             metadata[key.trim()] = val;
