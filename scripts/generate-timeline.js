@@ -41,8 +41,10 @@ async function main() {
     dailyActivity[date].commits += event.payload.size;
     dailyActivity[date].repos.add(event.repo.name);
     
-    for (const commit of event.payload.commits) {
-      dailyActivity[date].messages.push(`${event.repo.name}: ${commit.message}`);
+    if (Array.isArray(event.payload.commits)) {
+      for (const commit of event.payload.commits) {
+        dailyActivity[date].messages.push(`${event.repo.name}: ${commit.message}`);
+      }
     }
   }
 
