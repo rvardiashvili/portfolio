@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Clock, GraduationCap, BookOpen, Coffee } from 'lucide-react';
+import { ArrowLeft, Clock, GraduationCap, BookOpen, Coffee, Activity, GitCommit, GitMerge } from 'lucide-react';
 import { SectionHeader, LiquidCard } from './components/UI';
 import SEO from './components/SEO';
+import timelineData from './timeline.json';
 
 export default function Now() {
   return (
@@ -22,7 +23,7 @@ export default function Now() {
             Inspired by <a href="https://nownownow.com/about" target="_blank" rel="noreferrer" className="text-purple-400 hover:underline">Derek Sivers</a>, this page tracks what I'm currently focused on.
           </p>
           <p className="text-xs font-mono text-slate-500 mt-4 uppercase tracking-widest">
-            Last Updated: November 24, 2025
+            Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
           </p>
         </div>
 
@@ -49,6 +50,51 @@ export default function Now() {
                 </div>
              </LiquidCard>
           </section>
+
+          {/* Activity Timeline */}
+          {timelineData.length > 0 && (
+            <section>
+              <SectionHeader title="Coding Activity" icon={Activity} />
+              <div className="relative border-l border-slate-800 ml-3 space-y-8 pb-4">
+                {timelineData.slice(0, 7).map((item, index) => (
+                  <div key={index} className="ml-8 relative group">
+                    {/* Timeline Dot */}
+                    <div className="absolute -left-[41px] top-1 p-1 bg-slate-900 rounded-full border border-slate-800 group-hover:border-purple-500/50 transition-colors">
+                      <GitCommit size={14} className="text-slate-500 group-hover:text-purple-400" />
+                    </div>
+                    
+                    <LiquidCard className="p-5">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                        <span className="font-mono text-xs text-purple-400">{item.date}</span>
+                        <div className="flex items-center gap-3">
+                          <span className="text-[10px] uppercase tracking-wider text-slate-500 flex items-center gap-1">
+                            <GitMerge size={12} /> {item.commits} Commits
+                          </span>
+                        </div>
+                      </div>
+                      
+                      <p className="text-slate-300 text-sm leading-relaxed mb-3">
+                        {item.summary}
+                      </p>
+                      
+                      <div className="flex flex-wrap gap-2">
+                        {item.repos.map((repo) => (
+                          <span key={repo} className="text-[10px] px-2 py-0.5 bg-slate-800/50 border border-white/5 rounded-full text-slate-400 font-mono">
+                            {repo}
+                          </span>
+                        ))}
+                      </div>
+                    </LiquidCard>
+                  </div>
+                ))}
+              </div>
+              {timelineData.length > 5 && (
+                 <div className="ml-8 mt-4">
+                    <p className="text-xs text-slate-600 italic">...and more history on GitHub.</p>
+                 </div>
+              )}
+            </section>
+          )}
 
           {/* Secondary */}
           <section className="grid md:grid-cols-2 gap-6">
