@@ -73,20 +73,25 @@ async function main() {
     console.log(`Generating summary for ${date}...`);
     
     const prompt = `
-      I am a software engineer. Here is my commit activity for today (${date}):
+      Here is Rati's coding activity for today (${date}):
       ${activity.messages.join('\n')}
       
-      Write a short, professional, and engaging one-sentence summary (max 30 words) of what I accomplished today. 
-      Use active verbs. Do not start with "I". Example: "Optimized the image pipeline memory usage and refactored the API authentication layer."
+      Act as a witty, observant tech narrator. Write a sentence or two (max 60 words) describing what Rati worked on. 
+      - Use a casual but knowledgeable tone.
+      - Refer to "Rati" by name or "he".
+      - Focus on the technical substance (e.g., "Rati wrestled with the image pipeline..." or "He finally squashed that memory leak...").
+      - Mention the specific project/repo name if it adds context.
+      - Do NOT use generic phrases like "He made progress." Be specific based on the commit messages.
     `;
 
     try {
       const result = await model.generateContent(prompt);
       const summary = result.response.text().trim();
+      console.log('Generated summary:', summary);
 
       const newEntry = {
         date,
-        commits: activity.commits,
+        commits: activity.commits || activity.messages.length || 1, // Fallback to message count or 1
         repos: Array.from(activity.repos),
         summary
       };
