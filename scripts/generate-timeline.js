@@ -55,7 +55,7 @@ async function main() {
   }
 
   const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
-  const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+  const model = genAI.getGenerativeModel({ model: 'gemini-flash-latest' });
 
   let hasChanges = false;
 
