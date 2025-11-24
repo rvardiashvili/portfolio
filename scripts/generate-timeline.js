@@ -6,6 +6,7 @@ import 'dotenv/config';
 const HISTORY_FILE = path.join(process.cwd(), 'src/timeline.json');
 const USERNAME = 'rvardiashvili';
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN; // Optional, but good for higher rate limits
 
 async function main() {
   if (!GEMINI_API_KEY) {
@@ -13,11 +14,20 @@ async function main() {
     process.exit(1);
   }
 
-  console.log('Fetching GitHub events...');
-  const eventsResponse = await fetch(`https://api.github.com/users/${USERNAME}/events`);
+  console.log('Fetching GitHub events (REST API)...');
+  
+  const headers = {
+    'Accept': 'application/vnd.github.v3+json'
+  };
+  if (GITHUB_TOKEN) {
+    headers['Authorization'] = `token ${GITHUB_TOKEN}`;
+  }
+
+  const eventsResponse = await fetch(`https://api.github.com/users/${USERNAME}/events`, { headers });
   
   if (!eventsResponse.ok) {
-      console.error('Failed to fetch GitHub events:', eventsResponse.statusText);
+      console.error('Failed to fetch GitHub events:', eventsResponse.status, eventsResponse.statusText);
+      console.error('Response Body:', await eventsResponse.text());
       process.exit(1);
   }
   
@@ -33,18 +43,58 @@ async function main() {
       dailyActivity[date] = {
         date,
         commits: 0,
+        additions: 0,
+        deletions: 0,
         repos: new Set(),
         messages: []
       };
     }
 
-    dailyActivity[date].commits += event.payload.size;
     dailyActivity[date].repos.add(event.repo.name);
     
-    if (Array.isArray(event.payload.commits)) {
-      for (const commit of event.payload.commits) {
-        dailyActivity[date].messages.push(`${event.repo.name}: ${commit.message}`);
+    // Use compare endpoint to get full commit details
+    const { head, before } = event.payload;
+    const compareUrl = `${event.repo.url}/compare/${before}...${head}`;
+
+    try {
+      const compareResponse = await fetch(compareUrl, { headers });
+      if (!compareResponse.ok) {
+        console.warn(`Failed to fetch compare for ${event.repo.name} (${before}...${head}): ${compareResponse.status} ${compareResponse.statusText}`);
+        continue;
       }
+      const compareData = await compareResponse.json();
+
+      if (compareData.commits && Array.isArray(compareData.commits)) {
+        for (const commit of compareData.commits) {
+          dailyActivity[date].commits++;
+          dailyActivity[date].messages.push(`${event.repo.name}: ${commit.commit.message}`); // commit.commit.message for compare API
+
+          // Fetch detailed stats for this commit to get lines changed
+          if (commit.url) {
+             try {
+               const commitDetailsResponse = await fetch(commit.url, { headers });
+               if (commitDetailsResponse.ok) {
+                 const commitDetails = await commitDetailsResponse.json();
+                 if (commitDetails.stats) {
+                   dailyActivity[date].additions += commitDetails.stats.additions;
+                   dailyActivity[date].deletions += commitDetails.stats.deletions;
+                 } else {
+                   console.warn(`Commit ${commit.sha} has no stats in details.`);
+                 }
+               } else {
+                 console.warn(`Failed to fetch details for commit ${commit.sha}: ${commitDetailsResponse.status} ${commitDetailsResponse.statusText}`);
+               }
+             } catch (err) {
+               console.warn(`Error fetching details for commit ${commit.sha}:`, err.message);
+             }
+          }
+        }
+      } else {
+        console.warn(`Compare for ${event.repo.name} (${before}...${head}) returned no commits or malformed data.`);
+      }
+
+    } catch (error) {
+      console.error(`Error processing PushEvent for ${event.repo.name}:`, error.message);
     }
   }
 
@@ -64,9 +114,10 @@ async function main() {
     const activity = dailyActivity[date];
     const existingEntry = history.find(h => h.date === date);
     
-    // If we already have an entry for this date with the same commit count, skip
-    // (Simple de-duplication check)
-    if (existingEntry && existingEntry.commits === activity.commits) {
+    // Update if commits OR additions/deletions changed
+    if (existingEntry && 
+        existingEntry.commits === activity.commits &&
+        existingEntry.additions === activity.additions) {
         continue;
     }
 
@@ -74,14 +125,15 @@ async function main() {
     
     const prompt = `
       Here is Rati's coding activity for today (${date}):
+      Stats: ${activity.commits} commits, +${activity.additions} lines added, -${activity.deletions} lines deleted.
+      Commit Messages:
       ${activity.messages.join('\n')}
       
-      Act as a witty, observant tech narrator. Write a sentence or two (max 60 words) describing what Rati worked on. 
+      Act as a witty, observant tech narrator. Write a short sentence (max 35 words) describing what Rati worked on. 
       - Use a casual but knowledgeable tone.
       - Refer to "Rati" by name or "he".
-      - Focus on the technical substance (e.g., "Rati wrestled with the image pipeline..." or "He finally squashed that memory leak...").
-      - Mention the specific project/repo name if it adds context.
-      - Do NOT use generic phrases like "He made progress." Be specific based on the commit messages.
+      - Mention specific projects/repos if relevant.
+      - Highlight the scale of work if the line count is high.
     `;
 
     try {
@@ -91,7 +143,9 @@ async function main() {
 
       const newEntry = {
         date,
-        commits: activity.commits || activity.messages.length || 1, // Fallback to message count or 1
+        commits: activity.commits,
+        additions: activity.additions,
+        deletions: activity.deletions,
         repos: Array.from(activity.repos),
         summary
       };

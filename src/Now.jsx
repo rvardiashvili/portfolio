@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Clock, GraduationCap, BookOpen, Coffee, Activity, GitCommit, GitMerge } from 'lucide-react';
+import { ArrowLeft, Clock, GraduationCap, BookOpen, Coffee, Activity, GitCommit, GitMerge, FolderGit2 } from 'lucide-react';
 import { SectionHeader, LiquidCard } from './components/UI';
 import SEO from './components/SEO';
 import timelineData from './timeline.json';
@@ -64,24 +64,37 @@ export default function Now() {
                     </div>
                     
                     <LiquidCard className="p-5">
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-                        <span className="font-mono text-xs text-purple-400">{item.date}</span>
-                        <div className="flex items-center gap-3">
-                          <span className="text-[10px] uppercase tracking-wider text-slate-500 flex items-center gap-1">
-                            <GitMerge size={12} /> {item.commits} Commits
+                      <div className="flex flex-col gap-2 mb-3">
+                        <div className="flex justify-between items-center mb-1">
+                          <span className="font-mono text-base text-purple-400">{item.date}</span>
+                          <span className="text-sm font-bold text-white flex items-center gap-1.5 bg-slate-800 px-2 py-1 rounded-md border border-slate-700">
+                            <GitMerge size={14} className="text-purple-400" /> {item.commits} Commits
                           </span>
                         </div>
+                        {(item.additions > 0 || item.deletions > 0) && (
+                           <span className="text-xs uppercase tracking-wider text-slate-400 flex items-center gap-1.5 justify-end">
+                              <Activity size={12} className="text-slate-500" /> 
+                              <span className="text-green-400 font-bold">+{item.additions}</span> / <span className="text-red-400 font-bold">-{item.deletions}</span> Lines
+                           </span>
+                        )}
                       </div>
                       
-                      <p className="text-slate-300 text-sm leading-relaxed mb-3">
+                      <p className="text-slate-300 text-sm leading-relaxed mb-4 pl-1 border-l-2 border-purple-500/20">
                         {item.summary}
                       </p>
                       
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-col gap-2 mt-3">
                         {item.repos.map((repo) => (
-                          <span key={repo} className="text-[10px] px-2 py-0.5 bg-slate-800/50 border border-white/5 rounded-full text-slate-400 font-mono">
+                          <a 
+                            key={repo} 
+                            href={`https://github.com/${repo}`} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="group w-fit flex items-center gap-2 text-[11px] px-3 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-md text-purple-300 font-mono font-medium tracking-wide hover:bg-purple-500/20 hover:border-purple-500 transition-colors cursor-pointer"
+                          >
+                            <FolderGit2 size={12} className="text-purple-400/80 group-hover:text-purple-300" />
                             {repo}
-                          </span>
+                          </a>
                         ))}
                       </div>
                     </LiquidCard>
