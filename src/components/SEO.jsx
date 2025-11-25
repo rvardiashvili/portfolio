@@ -6,7 +6,7 @@ export default function SEO({ title, description, keywords, image, url }) {
   const defaultDescription = "Portfolio of Rati Vardiashvili, a Software Engineer based in Bremen, Germany. Specializing in backend systems, distributed computing, and scalable architecture.";
   const defaultKeywords = "Rati Vardiashvili, Software Engineer, Backend Developer, Java, Python, Bremen, Constructor University";
   const siteUrl = "https://rvardiashvili.github.io"; // Assuming GitHub Pages or similar
-  const defaultImage = "/portfolio/media/pfp.png"; // Use PFP or a dedicated OG image
+  const defaultImage = `${import.meta.env.BASE_URL}media/webp/pfp.webp`; // Use PFP or a dedicated OG image
 
   return (
     <Helmet>

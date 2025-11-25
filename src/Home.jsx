@@ -76,12 +76,14 @@ export default function Home() {
                <div className="flex flex-col items-center text-center mb-8">
                   <div className="relative mb-4 group cursor-pointer">
                      <div className="w-24 h-24 rounded-full bg-gradient-to-br from-slate-800 to-black border-2 border-white/10 flex items-center justify-center shadow-xl overflow-hidden relative z-10">
-                        <img 
-                          src="/portfolio/media/pfp.png" 
-                          alt="Rati Vardiashvili" 
-                          className="w-full h-full object-cover"
-                        />
-                     </div>
+                        <picture>
+                          <source srcset={`${import.meta.env.BASE_URL}media/webp/pfp.webp`} type="image/webp" />
+                          <img
+                            src={`${import.meta.env.BASE_URL}media/webp/pfp.webp`}
+                            alt="Rati Vardiashvili"
+                            className="w-full h-full object-cover"
+                          />
+                        </picture>                     </div>
                      <div className="absolute inset-0 rounded-full border-2 border-emerald-500/50 animate-pulse"></div>
                   </div>
                   
@@ -163,7 +165,10 @@ export default function Home() {
           <div className="lg:hidden flex flex-col items-center text-center mb-8 mt-8">
               <div className="relative mb-6">
                   <div className="w-28 h-28 rounded-full bg-gradient-to-br from-slate-800 to-black border-2 border-white/10 flex items-center justify-center shadow-xl overflow-hidden">
-                      <img src="/portfolio/media/pfp.png" alt="Rati Vardiashvili" className="w-full h-full object-cover" />
+                      <picture>
+  <source srcset={`${import.meta.env.BASE_URL}media/webp/pfp.webp`} type="image/webp" />
+  <img src={`${import.meta.env.BASE_URL}media/webp/pfp.webp`} alt="Rati Vardiashvili" className="w-full h-full object-cover" />
+</picture>
                   </div>
                   <div className="absolute inset-0 rounded-full border-2 border-emerald-500/50 animate-pulse"></div>
               </div>
@@ -337,12 +342,14 @@ export default function Home() {
                 <div className="flex w-max animate-scroll">
                   {[...PHOTOS, ...PHOTOS].map((photo, index) => (
                     <div key={index} className="relative h-64 shrink-0 border-r border-white/5 last:border-0">
-                       <img 
-                         src={photo.src} 
-                         alt={photo.desc} 
-                         className="h-full w-auto object-cover opacity-100 transition-all duration-500"
-                       />
-                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                       <picture>
+                         <source srcset={photo.src} type="image/webp" />
+                         <img
+                           src={photo.src}
+                           alt={photo.desc}
+                           className="h-full w-auto object-cover opacity-100 transition-all duration-500"
+                         />
+                       </picture>                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                        
                        <div className="absolute bottom-4 left-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                           <span className="px-2 py-1 rounded-md bg-white/10 backdrop-blur-md text-[10px] font-bold text-white uppercase tracking-wider border border-white/10 shadow-xl">

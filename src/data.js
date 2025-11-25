@@ -80,11 +80,13 @@ export const BOOKS = [
   { title: "Metro 2033", author: "D. Glukhovsky" }
 ];
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 export const PHOTOS = [
-  { id: 1, src: "/portfolio/media/unnamed.jpg", desc: "Night Market", color: "bg-red-900" },
-  { id: 2, src: "/portfolio/media/unnamed (1).jpg", desc: "Silhouette", color: "bg-orange-900" },
-  { id: 3, src: "/portfolio/media/unnamed (2).jpg", desc: "Fog", color: "bg-slate-800" },
-  { id: 4, src: "/portfolio/media/unnamed (3).jpg", desc: "Archives", color: "bg-yellow-900" },
-  { id: 5, src: "/portfolio/media/DSC01653.JPG", desc: "Perspective", color: "bg-blue-900" },
-  { id: 6, src: "/portfolio/media/IMG_1097.JPG", desc: "Moment", color: "bg-green-900" }
+  { id: 1, src: `${BASE_URL}media/webp/unnamed.webp`, desc: "Night Market", color: "bg-red-900" },
+  { id: 2, src: `${BASE_URL}media/webp/unnamed (1).webp`, desc: "Silhouette", color: "bg-orange-900" },
+  { id: 3, src: `${BASE_URL}media/webp/unnamed (2).webp`, desc: "Fog", color: "bg-slate-800" },
+  { id: 4, src: `${BASE_URL}media/webp/unnamed (3).webp`, desc: "Archives", color: "bg-yellow-900" },
+  { id: 5, src: `${BASE_URL}media/webp/DSC01653.webp`, desc: "Perspective", color: "bg-blue-900" },
+  { id: 6, src: `${BASE_URL}media/webp/IMG_1097.webp`, desc: "Moment", color: "bg-green-900" }
 ];
