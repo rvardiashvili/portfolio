@@ -8,36 +8,49 @@ export default function ScrollToTop({ containerId }) {
 
   // 1. Auto-scroll to top on route change
   useEffect(() => {
-    const container = document.getElementById(containerId);
-    if (container) {
-      container.scrollTo({ top: 0, behavior: 'instant' });
+    if (containerId) {
+      const container = document.getElementById(containerId);
+      if (container) {
+        container.scrollTo({ top: 0, behavior: 'instant' });
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'instant' });
     }
   }, [pathname, containerId]);
 
   // 2. Show/Hide button based on scroll position
   useEffect(() => {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-
     const toggleVisibility = () => {
-      if (container.scrollTop > 300) {
+      let scrollTop = 0;
+      if (containerId) {
+        const container = document.getElementById(containerId);
+        if (container) scrollTop = container.scrollTop;
+      } else {
+        scrollTop = window.scrollY || document.documentElement.scrollTop;
+      }
+
+      if (scrollTop > 300) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
       }
     };
 
-    container.addEventListener('scroll', toggleVisibility);
-    return () => container.removeEventListener('scroll', toggleVisibility);
+    const target = containerId ? document.getElementById(containerId) : window;
+    if (target) {
+      target.addEventListener('scroll', toggleVisibility);
+      return () => target.removeEventListener('scroll', toggleVisibility);
+    }
   }, [containerId]);
 
   const scrollToTop = () => {
-    const container = document.getElementById(containerId);
-    if (container) {
-      container.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
+    if (containerId) {
+      const container = document.getElementById(containerId);
+      if (container) {
+        container.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 

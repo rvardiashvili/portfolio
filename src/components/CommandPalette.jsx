@@ -17,7 +17,8 @@ import {
   Mail,
   Copy,
   Check,
-  ArrowUp
+  ArrowUp,
+  Trophy
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data';
 
@@ -129,6 +130,10 @@ export default function CommandPalette() {
                     el.style.transform = `translateY(${window.innerHeight + 200}px) rotate(${randomRotation}deg)`;
                 });
              })}>Gravity (Chaos Mode)</CommandItem>
+          </Command.Group>
+
+          <Command.Group heading="Extras" className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2 px-2 mt-4">
+            <CommandItem icon={Trophy} onSelect={() => runCommand(() => window.dispatchEvent(new CustomEvent('toggle-snake')))}>Play Snake</CommandItem>
           </Command.Group>
         </Command.List>
 

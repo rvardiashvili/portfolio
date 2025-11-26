@@ -126,13 +126,14 @@ export const LiquidCard = ({ children, className = "", href }) => {
   const Wrapper = href ? 'a' : 'div';
   const props = href ? { href, target: "_blank", rel: "noreferrer" } : {};
   const cardRef = useRef(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [opacity, setOpacity] = useState(0);
+  const glowRef = useRef(null);
 
   const handleMouseMove = (e) => {
-    if (!cardRef.current) return;
+    if (!cardRef.current || !glowRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
-    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    glowRef.current.style.background = `radial-gradient(600px circle at ${x}px ${y}px, rgba(255,255,255,0.08), transparent 40%)`;
   };
 
   return (
@@ -140,8 +141,8 @@ export const LiquidCard = ({ children, className = "", href }) => {
       {...props} 
       ref={cardRef}
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => setOpacity(1)}
-      onMouseLeave={() => setOpacity(0)}
+      onMouseEnter={() => glowRef.current && (glowRef.current.style.opacity = 1)}
+      onMouseLeave={() => glowRef.current && (glowRef.current.style.opacity = 0)}
       className={`
         group relative block overflow-hidden rounded-xl
         bg-white/5 border border-white/10
@@ -152,10 +153,11 @@ export const LiquidCard = ({ children, className = "", href }) => {
       `}
     >
       <div 
+        ref={glowRef}
         className="pointer-events-none absolute -inset-px transition opacity duration-300"
         style={{
-          opacity,
-          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255,255,255,0.08), transparent 40%)`
+          opacity: 0,
+          background: `radial-gradient(600px circle at 0px 0px, rgba(255,255,255,0.08), transparent 40%)`
         }}
       />
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-50"></div>

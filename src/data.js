@@ -16,15 +16,15 @@ export const EDUCATION = [
     school: "Constructor University",
     degree: "B.Sc. Computer Science",
     location: "Bremen, Germany",
-    period: "2022 - 2026",
-    desc: "Focus on Software Engineering, Distributed Systems, and Data Engineering."
+    period: "2022 - Jan 2026",
+    desc: ""
   },
   {
     school: "Buckswood International",
     degree: "High School Diploma",
     location: "Tbilisi, Georgia",
     period: "2022",
-    desc: "Mathematics & Physics concentration."
+    desc: ""
   }
 ];
 

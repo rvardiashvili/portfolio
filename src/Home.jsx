@@ -43,7 +43,7 @@ export default function Home() {
           }
         });
       },
-      { root: contentRef.current, threshold: 0.3, rootMargin: "-10% 0px -45% 0px" }
+      { root: null, threshold: 0.3, rootMargin: "-10% 0px -45% 0px" }
     );
 
     const sections = ['profile', 'experience', 'projects', 'education', 'personal'];
@@ -63,23 +63,23 @@ export default function Home() {
   };
 
   return (
-    <div className="relative z-10 w-full max-w-[1440px] mx-auto p-4 md:p-8 lg:p-12 h-full flex gap-8 items-start h-screen">
+    <div className="relative z-10 w-full max-w-[1440px] mx-auto p-4 md:p-8 lg:p-12 flex gap-8 items-start min-h-screen">
       <SEO />
       
-      {/* --- LEFT SIDEBAR (Sticky, No Scroll) --- */}
-      <div className="hidden lg:flex w-80 shrink-0 flex-col gap-6 h-full">
-        <LiquidCard className="h-full p-8">
+      {/* --- LEFT SIDEBAR (Sticky) --- */}
+      <div className="hidden lg:flex w-80 shrink-0 flex-col gap-6 sticky top-12 h-[calc(100vh-6rem)]">
+        <LiquidCard className="h-full p-6">
            <div className="flex flex-col h-full justify-between">
              {/* Top Section: Header & Nav */}
              <div>
                {/* REWORKED HEADER: Centered Identity */}
-               <div className="flex flex-col items-center text-center mb-8">
+               <div className="flex flex-col items-center text-center mb-6">
                   <div className="relative mb-4 group cursor-pointer">
                      <div className="w-24 h-24 rounded-full bg-gradient-to-br from-slate-800 to-black border-2 border-white/10 flex items-center justify-center shadow-xl overflow-hidden relative z-10">
                         <picture>
-                          <source srcset={`${import.meta.env.BASE_URL}media/webp/pfp.webp`} type="image/webp" />
+                          <source srcSet={`media/webp/pfp.webp`} type="image/webp" />
                           <img
-                            src={`${import.meta.env.BASE_URL}media/webp/pfp.webp`}
+                            src={`media/webp/pfp.webp`}
                             alt="Rati Vardiashvili"
                             className="w-full h-full object-cover"
                           />
@@ -115,29 +115,29 @@ export default function Home() {
                  <NavItem icon={Activity} label="Personal" active={activeSection === 'personal'} onClick={() => scrollToSection('personal')} />
                </nav>
 
-               {/* New Pages Nav */}
-               <div className="pt-4 border-t border-white/10 space-y-1">
-                    <Link to="/now" className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-all">
-                        <Clock size={16} />
-                        <span className="text-xs font-bold uppercase tracking-widest">Now</span>
+               {/* New Pages Nav - Compact Grid */}
+               <div className="pt-4 border-t border-white/10 grid grid-cols-2 gap-2">
+                    <Link to="/now" className="flex items-center justify-center gap-2 px-2 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-all border border-transparent hover:border-white/5">
+                        <Clock size={14} />
+                        <span className="text-[10px] font-bold uppercase tracking-widest">Now</span>
                     </Link>
-                    <Link to="/blog" className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-all">
-                        <FileText size={16} />
-                        <span className="text-xs font-bold uppercase tracking-widest">Blog</span>
+                    <Link to="/blog" className="flex items-center justify-center gap-2 px-2 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-all border border-transparent hover:border-white/5">
+                        <FileText size={14} />
+                        <span className="text-[10px] font-bold uppercase tracking-widest">Blog</span>
                     </Link>
-                    <Link to="/uses" className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-all">
-                        <Monitor size={16} />
-                        <span className="text-xs font-bold uppercase tracking-widest">Uses</span>
+                    <Link to="/uses" className="flex items-center justify-center gap-2 px-2 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-all border border-transparent hover:border-white/5">
+                        <Monitor size={14} />
+                        <span className="text-[10px] font-bold uppercase tracking-widest">Uses</span>
                     </Link>
-                    <Link to="/contact" className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-all">
-                        <Send size={16} />
-                        <span className="text-xs font-bold uppercase tracking-widest">Contact</span>
+                    <Link to="/contact" className="flex items-center justify-center gap-2 px-2 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-all border border-transparent hover:border-white/5">
+                        <Send size={14} />
+                        <span className="text-[10px] font-bold uppercase tracking-widest">Contact</span>
                     </Link>
                </div>
              </div>
 
              {/* Connect Section - Fixed to Bottom */}
-             <div className="space-y-6">
+             <div className="space-y-4">
                 {/* Clean Social Icons */}
                 <div className="flex gap-6 justify-center">
                   <SocialButton href={PERSONAL_INFO.github} icon={Github} label="GitHub Profile" />
@@ -157,7 +157,7 @@ export default function Home() {
       {/* --- RIGHT CONTENT (Scrollable Area) --- */}
       <div 
         ref={contentRef}
-        className="flex-1 h-full overflow-y-auto rounded-2xl scroll-smooth custom-scrollbar"
+        className="flex-1"
       >
         <div className="max-w-4xl mx-auto flex flex-col gap-16 pb-20 pt-2">
 
@@ -166,8 +166,8 @@ export default function Home() {
               <div className="relative mb-6">
                   <div className="w-28 h-28 rounded-full bg-gradient-to-br from-slate-800 to-black border-2 border-white/10 flex items-center justify-center shadow-xl overflow-hidden">
                       <picture>
-  <source srcset={`${import.meta.env.BASE_URL}media/webp/pfp.webp`} type="image/webp" />
-  <img src={`${import.meta.env.BASE_URL}media/webp/pfp.webp`} alt="Rati Vardiashvili" className="w-full h-full object-cover" />
+  <source srcSet={`media/webp/pfp.webp`} type="image/webp" />
+  <img src={`media/webp/pfp.webp`} alt="Rati Vardiashvili" className="w-full h-full object-cover" />
 </picture>
                   </div>
                   <div className="absolute inset-0 rounded-full border-2 border-emerald-500/50 animate-pulse"></div>
@@ -337,31 +337,32 @@ export default function Home() {
                   <span className="text-[10px] font-bold font-mono text-slate-500 uppercase tracking-widest">Photography</span>
               </div>
               
-              {/* Infinite Scroll Carousel */}
-              <LiquidCard className="p-0 overflow-hidden group" href={null}>
-                <div className="flex w-max animate-scroll">
-                  {[...PHOTOS, ...PHOTOS].map((photo, index) => (
-                    <div key={index} className="relative h-64 shrink-0 border-r border-white/5 last:border-0">
-                       <picture>
-                         <source srcset={photo.src} type="image/webp" />
-                         <img
-                           src={photo.src}
-                           alt={photo.desc}
-                           className="h-full w-auto object-cover opacity-100 transition-all duration-500"
-                         />
-                       </picture>                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                       
-                       <div className="absolute bottom-4 left-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                          <span className="px-2 py-1 rounded-md bg-white/10 backdrop-blur-md text-[10px] font-bold text-white uppercase tracking-wider border border-white/10 shadow-xl">
-                            {photo.desc}
-                          </span>
-                       </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="absolute inset-0 pointer-events-none shadow-[inset_20px_0_20px_-10px_#000,inset_-20px_0_20px_-10px_#000] opacity-50"></div>
-              </LiquidCard>
-            </div>
+                      {/* Infinite Scroll Carousel */}
+                      <LiquidCard className="p-0 overflow-hidden" href={null}>
+                        <div className="flex w-max animate-scroll">
+                          {[...PHOTOS, ...PHOTOS].map((photo, index) => (
+                            <div key={index} className="relative h-64 min-w-[16rem] shrink-0 border-r border-white/5 last:border-0">
+                               <picture>
+                                 <source srcset={photo.src} type="image/webp" />
+                                 <img
+                                   src={photo.src}
+                                   alt={photo.desc}
+                                   className="h-full w-auto object-cover opacity-100 transition-all duration-500"
+                                   loading="eager" 
+                                 />
+                               </picture>
+                               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                               
+                               <div className="absolute bottom-4 left-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                  <span className="px-2 py-1 rounded-md bg-white/10 backdrop-blur-md text-[10px] font-bold text-white uppercase tracking-wider border border-white/10 shadow-xl whitespace-nowrap">
+                                    {photo.desc}
+                                  </span>
+                               </div>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="absolute inset-0 pointer-events-none shadow-[inset_20px_0_20px_-10px_#000,inset_-20px_0_20px_-10px_#000] opacity-50"></div>
+                      </LiquidCard>            </div>
           </section>
 
           {/* --- MOBILE CONNECT --- */}

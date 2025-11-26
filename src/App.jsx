@@ -10,10 +10,12 @@ import NotFound from './NotFound';
 import Now from './Now';
 import ScrollToTop from './components/ScrollToTop';
 import CommandPalette from './components/CommandPalette';
+import SnakeGame from './components/SnakeGame';
 
 export default function App() {
   const location = useLocation();
-  const [retroMode, setRetroMode] = useState(false);
+  const [partyMode, setPartyMode] = useState(false);
+  const [showSnake, setShowSnake] = useState(false);
 
   // --- EASTER EGG 1: Console Greeting ---
   useEffect(() => {
@@ -31,7 +33,17 @@ export default function App() {
     );
   }, []);
 
-  // --- EASTER EGG 2: Konami Code (Retro Mode) ---
+  // --- LISTEN FOR CUSTOM EVENTS (FROM COMMAND PALETTE) ---
+  useEffect(() => {
+    const toggleSnake = () => setShowSnake(prev => !prev);
+
+    window.addEventListener('toggle-snake', toggleSnake);
+    return () => {
+      window.removeEventListener('toggle-snake', toggleSnake);
+    };
+  }, []);
+
+  // --- EASTER EGG 2: Konami Code (Party Mode) ---
   useEffect(() => {
     const konamiCode = [
       'ArrowUp', 'ArrowUp', 
@@ -46,7 +58,7 @@ export default function App() {
       if (e.key === konamiCode[cursor]) {
         cursor++;
         if (cursor === konamiCode.length) {
-          setRetroMode(prev => !prev);
+          setPartyMode(prev => !prev);
           cursor = 0;
         }
       } else {
@@ -59,89 +71,40 @@ export default function App() {
   }, []);
 
   return (
-    <div className="h-screen font-sans text-white selection:bg-purple-500/30 selection:text-white overflow-hidden flex bg-[#1e1b29]">
+    <div className="min-h-screen font-sans text-white selection:bg-purple-500/30 selection:text-white flex bg-[#1e1b29] custom-scrollbar">
       
       <style>{`
-        @keyframes pan {
-          0% { transform: scale(1.05) translate(0, 0); }
-          50% { transform: scale(1.1) translate(-1%, -1%); }
-          100% { transform: scale(1.05) translate(0, 0); }
-        }
-        .animate-slow-pan {
-          animation: pan 60s ease-in-out infinite alternate;
-        }
-        @keyframes music-bar {
-          0%, 100% { height: 4px; }
-          50% { height: 16px; }
-        }
-        .animate-music-bar {
-          animation: music-bar 1s ease-in-out infinite;
-        }
-        @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-scroll {
-          animation: scroll 60s linear infinite;
-        }
-        .animate-scroll:hover {
-          animation-play-state: paused;
-        }
-        /* Custom Scrollbar for the whole app */
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: rgba(255, 255, 255, 0.02);
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: rgba(255, 255, 255, 0.1);
-          border-radius: 10px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: rgba(255, 255, 255, 0.2);
-        }
-        
-        /* --- RETRO MODE STYLES --- */
-        ${retroMode ? `
-          * {
-            font-family: 'Courier New', Courier, monospace !important;
-            color: #00ff00 !important;
-            border-color: #00ff00 !important;
-            background-color: #000000 !important;
-            background-image: none !important;
-            box-shadow: none !important;
-            border-radius: 0 !important;
-            text-shadow: 0 0 5px #00ff00;
+        /* --- PARTY MODE STYLES --- */
+        ${partyMode ? `
+          @keyframes rainbow { 
+            0% { filter: hue-rotate(0deg) contrast(1.2); }
+            100% { filter: hue-rotate(360deg) contrast(1.2); }
           }
-          img, canvas {
-            display: none !important;
+          @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
           }
-          ::selection {
-            background: #00ff00 !important;
-            color: #000000 !important;
+          body {
+            animation: rainbow 2s linear infinite;
+            overflow-x: hidden;
           }
-          /* Scanline effect */
-          body::before {
-            content: " ";
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-            z-index: 9999;
-            background-size: 100% 2px, 3px 100%;
-            pointer-events: none;
+          div, section, p, h1, h2, h3, img {
+            animation: float 3s ease-in-out infinite;
+            animation-delay: calc(var(--order, 0) * 0.1s);
+          }
+          #main-scroll-container {
+             animation: none;
           }
         ` : ''}
       `}</style>
-
+      
+      {partyMode && <ConfettiCanvas />}
+      {showSnake && <SnakeGame onClose={() => setShowSnake(false)} />}
+      
       <ArtsyBackground />
       <CommandPalette />
 
-      <div id="main-scroll-container" className="relative z-10 w-full h-full overflow-y-auto custom-scrollbar">
+      <div id="main-scroll-container" className="relative z-10 w-full">
          <>
            <Routes location={location} key={location.pathname}>
               <Route path="/" element={<Home />} />
@@ -152,9 +115,77 @@ export default function App() {
               <Route path="/now" element={<Now />} />
               <Route path="*" element={<NotFound />} />
            </Routes>
-           <ScrollToTop containerId="main-scroll-container" />
+           <ScrollToTop />
          </>
       </div>
     </div>
   );
 }
+
+const ConfettiCanvas = () => {
+  const canvasRef = React.useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = [];
+    const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+
+    const createParticle = () => ({
+      x: Math.random() * canvas.width,
+      y: -10,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      size: Math.random() * 10 + 5,
+      speedY: Math.random() * 3 + 2,
+      speedX: Math.random() * 4 - 2,
+      rotation: Math.random() * 360,
+      rotationSpeed: Math.random() * 10 - 5
+    });
+
+    // Create initial burst
+    for(let i=0; i<100; i++) {
+        particles.push({
+            ...createParticle(),
+            y: Math.random() * canvas.height, // Start everywhere
+        });
+    }
+
+    let animationId;
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Add new particles occasionally
+      if (Math.random() < 0.1) particles.push(createParticle());
+
+      particles.forEach((p, index) => {
+        p.y += p.speedY;
+        p.x += p.speedX;
+        p.rotation += p.rotationSpeed;
+        
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate((p.rotation * Math.PI) / 180);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
+        ctx.restore();
+
+        if (p.y > canvas.height) {
+           p.y = -10;
+           p.x = Math.random() * canvas.width;
+        }
+      });
+
+      animationId = requestAnimationFrame(draw);
+    };
+    draw();
+
+    return () => cancelAnimationFrame(animationId);
+  }, []);
+
+  return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-[9999]" />;
+};
