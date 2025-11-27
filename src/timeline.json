@@ -1,5 +1,15 @@
 [
   {
+    "date": "2025-11-26",
+    "commits": 2,
+    "additions": 521,
+    "deletions": 197,
+    "repos": [
+      "rvardiashvili/portfolio"
+    ],
+    "summary": "He committed a significant overhaul to `rvardiashvili/portfolio`, ensuring buttery-smooth window scrolling, fixing pesky 404s, and adding a classic Snake game plus a Konami code party trick."
+  },
+  {
     "date": "2025-11-25",
     "commits": 1,
     "additions": 1471,
@@ -42,12 +52,12 @@
   },
   {
     "date": "2025-11-16",
-    "commits": 6,
-    "additions": 359,
-    "deletions": 222,
+    "commits": 4,
+    "additions": 238,
+    "deletions": 172,
     "repos": [
       "rvardiashvili/rvardiashvili"
     ],
-    "summary": "Rati spent the day making his personal `rvardiashvili` README perfect, churning through 581 lines across six commits labeled with the most generic message possible."
+    "summary": "Rati clearly believes the README is the most critical piece of code, dedicating four high-volume commits to rewriting the front page of `rvardiashvili/rvardiashvili`."
   }
 ]
