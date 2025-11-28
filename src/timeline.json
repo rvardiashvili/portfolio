@@ -1,5 +1,15 @@
 [
   {
+    "date": "2025-11-27",
+    "commits": 2,
+    "additions": 1195,
+    "deletions": 905,
+    "repos": [
+      "rvardiashvili/GeoTiff-Scalable-Analysis-Pipeline"
+    ],
+    "summary": "Rati executed a massive refactor, renaming his GeoTiff pipeline to the general-purpose `eo_core`, integrating Prithvi segmentation, and significantly upgrading GPU memory heuristics for scalable EO inference."
+  },
+  {
     "date": "2025-11-26",
     "commits": 2,
     "additions": 521,
