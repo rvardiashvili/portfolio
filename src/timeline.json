@@ -1,5 +1,15 @@
 [
   {
+    "date": "2025-12-02",
+    "commits": 1,
+    "additions": 118,
+    "deletions": 68,
+    "repos": [
+      "rvardiashvili/GeoTiff-Scalable-Analysis-Pipeline"
+    ],
+    "summary": "Targeting the GeoTiff Scalable Analysis Pipeline, Rati performed significant surgery, adding 118 lines and deleting 68 to finally squash those nagging geospatial processing bugs."
+  },
+  {
     "date": "2025-11-27",
     "commits": 2,
     "additions": 1195,
@@ -59,15 +69,5 @@
       "rvardiashvili/GeoTiff-Scalable-Analysis-Pipeline"
     ],
     "summary": "Rati performed a massive documentation overhaul for his GeoTiff pipeline, deleting mountains of redundant READMEs and finally stabilizing crucial Sentinel-1 satellite functionality."
-  },
-  {
-    "date": "2025-11-16",
-    "commits": 4,
-    "additions": 238,
-    "deletions": 172,
-    "repos": [
-      "rvardiashvili/rvardiashvili"
-    ],
-    "summary": "Rati clearly believes the README is the most critical piece of code, dedicating four high-volume commits to rewriting the front page of `rvardiashvili/rvardiashvili`."
   }
 ]
