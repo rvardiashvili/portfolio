@@ -1,5 +1,15 @@
 [
   {
+    "date": "2025-12-20",
+    "commits": 5,
+    "additions": 27138,
+    "deletions": 1031,
+    "repos": [
+      "rvardiashvili/GeoTiff-Scalable-Analysis-Pipeline"
+    ],
+    "summary": "Rati pushed a 27k-line behemoth into his analysis pipeline, decoupling output generation with a new modular Reporter System and finally enabling robust multi-temporal data processing."
+  },
+  {
     "date": "2025-12-02",
     "commits": 1,
     "additions": 118,
@@ -59,15 +69,5 @@
       "rvardiashvili/portfolio"
     ],
     "summary": "Rati executed a massive 4,200+ line blitz on his `portfolio`, adding SEO, dynamic routing for Blog/Uses pages, and delightful Konami code easter eggs."
-  },
-  {
-    "date": "2025-11-22",
-    "commits": 1,
-    "additions": 621,
-    "deletions": 954,
-    "repos": [
-      "rvardiashvili/GeoTiff-Scalable-Analysis-Pipeline"
-    ],
-    "summary": "Rati performed a massive documentation overhaul for his GeoTiff pipeline, deleting mountains of redundant READMEs and finally stabilizing crucial Sentinel-1 satellite functionality."
   }
 ]
