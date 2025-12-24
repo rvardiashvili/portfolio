@@ -62,12 +62,12 @@
   },
   {
     "date": "2025-11-23",
-    "commits": 14,
-    "additions": 4237,
-    "deletions": 851,
+    "commits": 3,
+    "additions": 1668,
+    "deletions": 68,
     "repos": [
       "rvardiashvili/portfolio"
     ],
-    "summary": "Rati executed a massive 4,200+ line blitz on his `portfolio`, adding SEO, dynamic routing for Blog/Uses pages, and delightful Konami code easter eggs."
+    "summary": "He didn't just update his portfolio; Rati launched a 1600-line feature fortress, complete with Konami code, gravity commands, and serious SEO muscle."
   }
 ]
