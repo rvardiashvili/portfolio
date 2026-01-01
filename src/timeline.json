@@ -1,5 +1,15 @@
 [
   {
+    "date": "2025-12-31",
+    "commits": 2,
+    "additions": 899,
+    "deletions": 804,
+    "repos": [
+      "rvardiashvili/Orchard"
+    ],
+    "summary": "Rati wrapped up the year with a nearly 1,700-line bang in *Orchard*, perfecting the sync engine with shadow state and making sure the exhaustive architecture docs matched the new reality."
+  },
+  {
     "date": "2025-12-20",
     "commits": 8,
     "additions": 27330,
@@ -59,15 +69,5 @@
       "rvardiashvili/GeoTiff-Scalable-Analysis-Pipeline"
     ],
     "summary": "Rati was busy teaching his portfolio how to boast, churning through 1844 lines to deploy an AI-powered activity timeline, even while refactoring the GeoTiff pipeline to use Hydra."
-  },
-  {
-    "date": "2025-11-23",
-    "commits": 3,
-    "additions": 1668,
-    "deletions": 68,
-    "repos": [
-      "rvardiashvili/portfolio"
-    ],
-    "summary": "He didn't just update his portfolio; Rati launched a 1600-line feature fortress, complete with Konami code, gravity commands, and serious SEO muscle."
   }
 ]
