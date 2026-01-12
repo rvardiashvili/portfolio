@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-01-12",
+    "commits": 2,
+    "additions": 338,
+    "deletions": 34,
+    "repos": [
+      "rvardiashvili/kickstart.nvim"
+    ],
+    "summary": "Rati started the day by dropping 300+ lines into `kickstart.nvim`, effectively spinning up his entire personalized NeoVim setup from scratch."
+  },
+  {
     "date": "2026-01-09",
     "commits": 1,
     "additions": 1956,
@@ -58,15 +68,5 @@
       "rvardiashvili/GeoTiff-Scalable-Analysis-Pipeline"
     ],
     "summary": "Targeting the GeoTiff Scalable Analysis Pipeline, Rati performed significant surgery, adding 118 lines and deleting 68 to finally squash those nagging geospatial processing bugs."
-  },
-  {
-    "date": "2025-11-27",
-    "commits": 2,
-    "additions": 1195,
-    "deletions": 905,
-    "repos": [
-      "rvardiashvili/GeoTiff-Scalable-Analysis-Pipeline"
-    ],
-    "summary": "Rati executed a massive refactor, renaming his GeoTiff pipeline to the general-purpose `eo_core`, integrating Prithvi segmentation, and significantly upgrading GPU memory heuristics for scalable EO inference."
   }
 ]
