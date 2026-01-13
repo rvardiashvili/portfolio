@@ -1,13 +1,13 @@
 [
   {
     "date": "2026-01-12",
-    "commits": 2,
-    "additions": 338,
-    "deletions": 34,
+    "commits": 8,
+    "additions": 1548,
+    "deletions": 575,
     "repos": [
       "rvardiashvili/kickstart.nvim"
     ],
-    "summary": "Rati started the day by dropping 300+ lines into `kickstart.nvim`, effectively spinning up his entire personalized NeoVim setup from scratch."
+    "summary": "Rati deployed a massive, 1500-line refactor to `kickstart.nvim`, turning his Neovim setup into a speedy, fully-documented beast by lazy-loading everything and implementing pro workflow tools."
   },
   {
     "date": "2026-01-09",
