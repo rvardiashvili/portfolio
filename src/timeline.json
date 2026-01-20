@@ -51,13 +51,13 @@
   },
   {
     "date": "2025-12-20",
-    "commits": 8,
-    "additions": 27330,
-    "deletions": 25979,
+    "commits": 2,
+    "additions": 59,
+    "deletions": 24869,
     "repos": [
       "rvardiashvili/GSIP"
     ],
-    "summary": "Rati executed a 53,000-line architectural demolition in GSIP, implementing a modular Reporter System and building robust, OOM-proof multi-temporal data pipelines from the ground up."
+    "summary": "Rati executed an epic cleanup in `GSIP` today, deleting nearly twenty-five thousand lines of code. He clearly decided that sometimes, the best feature is the one he removes entirely."
   },
   {
     "date": "2025-12-02",
