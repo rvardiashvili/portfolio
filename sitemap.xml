@@ -31,6 +31,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://rvardiashvili.github.io/portfolio/#/blog/aira-and-orchard</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rvardiashvili.github.io/portfolio/#/blog/finished-thesis</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://rvardiashvili.github.io/portfolio/#/blog/magic-and-code</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>monthly</changefreq>

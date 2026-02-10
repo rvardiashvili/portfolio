@@ -6,7 +6,21 @@
   <description>Thoughts on software engineering, distributed systems, and data engineering.</description>
   <atom:link href="https://rvardiashvili.github.io/portfolio/rss.xml" rel="self" type="application/rss+xml" />
   <language>en-us</language>
-  <lastBuildDate>Tue, 10 Feb 2026 02:41:51 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 10 Feb 2026 19:13:42 GMT</lastBuildDate>
+  <item>
+    <title><![CDATA[Fiddling with New Projects: AIRA and Orchard]]></title>
+    <link>https://rvardiashvili.github.io/portfolio/#/blog/aira-and-orchard</link>
+    <guid isPermaLink="true">https://rvardiashvili.github.io/portfolio/#/blog/aira-and-orchard</guid>
+    <pubDate>Sun, 11 Jan 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[A look at two open-source tools I'm building to make my Linux life better: a local AI assistant and a native iCloud client.]]></description>
+  </item>
+  <item>
+    <title><![CDATA[GSIP: The Journey of Finishing My Thesis (and Fixing Satellite Maps)]]></title>
+    <link>https://rvardiashvili.github.io/portfolio/#/blog/finished-thesis</link>
+    <guid isPermaLink="true">https://rvardiashvili.github.io/portfolio/#/blog/finished-thesis</guid>
+    <pubDate>Mon, 22 Dec 2025 00:00:00 GMT</pubDate>
+    <description><![CDATA[Reflecting on the completion of my bachelor's thesis: how a frustrating technical problem turned into a tool that helps anyone run AI on satellite imagery.]]></description>
+  </item>
   <item>
     <title><![CDATA[Magic Systems and Operating Systems]]></title>
     <link>https://rvardiashvili.github.io/portfolio/#/blog/magic-and-code</link>
