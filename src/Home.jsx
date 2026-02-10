@@ -157,14 +157,14 @@ export default function Home() {
       {/* --- RIGHT CONTENT (Scrollable Area) --- */}
       <div 
         ref={contentRef}
-        className="flex-1"
+        className="flex-1 min-w-0"
       >
         <div className="max-w-4xl mx-auto flex flex-col gap-16 pb-20 pt-2">
 
           {/* --- MOBILE HEADER --- */}
-          <div className="lg:hidden flex flex-col items-center text-center mb-8 mt-8">
-              <div className="relative mb-6">
-                  <div className="w-28 h-28 rounded-full bg-gradient-to-br from-slate-800 to-black border-2 border-white/10 flex items-center justify-center shadow-xl overflow-hidden">
+          <div className="lg:hidden flex flex-col items-center text-center mb-8 mt-4">
+              <div className="relative mb-4">
+                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-slate-800 to-black border-2 border-white/10 flex items-center justify-center shadow-xl overflow-hidden">
                       <picture>
   <source srcSet={`media/webp/pfp.webp`} type="image/webp" />
   <img src={`media/webp/pfp.webp`} alt="Rati Vardiashvili" className="w-full h-full object-cover" />
@@ -172,20 +172,47 @@ export default function Home() {
                   </div>
                   <div className="absolute inset-0 rounded-full border-2 border-emerald-500/50 animate-pulse"></div>
               </div>
-              <h1 className="text-3xl font-serif tracking-tight text-white mb-2">Rati Vardiashvili</h1>
-              <p className="text-sm font-mono text-slate-300 uppercase tracking-widest mb-4">Software Engineer</p>
+              <h1 className="text-2xl font-serif tracking-tight text-white mb-1">Rati Vardiashvili</h1>
+              <p className="text-xs font-mono text-slate-300 uppercase tracking-widest mb-4">Software Engineer</p>
               
-              <div className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 inline-flex items-center gap-2">
+              <div className="px-3 py-1 rounded-full bg-white/5 border border-white/10 inline-flex items-center gap-2 mb-6">
                   <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
                   <span className="text-[10px] font-mono text-slate-200 uppercase tracking-widest">Available</span>
               </div>
+
+              {/* Mobile Section Nav (Horizontal Scroll) */}
+              <div className="w-full overflow-x-auto no-scrollbar mb-6 -mx-4 px-4">
+                <div className="flex justify-center gap-2 min-w-max">
+                  {['profile', 'experience', 'projects', 'education', 'personal'].map((id) => (
+                    <button 
+                      key={id} 
+                      onClick={() => scrollToSection(id)}
+                      className={`px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest border transition-all ${activeSection === id ? 'bg-white/10 text-white border-white/20' : 'bg-transparent text-slate-400 border-transparent hover:bg-white/5'}`}
+                    >
+                      {id}
+                    </button>
+                  ))}
+                </div>
+              </div>
               
-              {/* Mobile Nav Links */}
-              <div className="flex gap-4 mt-4">
-                  <Link to="/now" className="text-xs font-bold uppercase tracking-widest text-purple-400">Now</Link>
-                  <Link to="/blog" className="text-xs font-bold uppercase tracking-widest text-purple-400">Blog</Link>
-                  <Link to="/uses" className="text-xs font-bold uppercase tracking-widest text-purple-400">Uses</Link>
-                  <Link to="/contact" className="text-xs font-bold uppercase tracking-widest text-purple-400">Contact</Link>
+              {/* Mobile Page Nav Links */}
+              <div className="grid grid-cols-4 gap-2 w-full max-w-sm border-t border-white/10 pt-4">
+                  <Link to="/now" className="flex flex-col items-center gap-1 p-2 rounded-lg text-slate-400 hover:text-purple-400 hover:bg-white/5 transition-all">
+                    <Clock size={16} />
+                    <span className="text-[10px] font-bold uppercase tracking-widest">Now</span>
+                  </Link>
+                  <Link to="/blog" className="flex flex-col items-center gap-1 p-2 rounded-lg text-slate-400 hover:text-purple-400 hover:bg-white/5 transition-all">
+                    <FileText size={16} />
+                    <span className="text-[10px] font-bold uppercase tracking-widest">Blog</span>
+                  </Link>
+                  <Link to="/uses" className="flex flex-col items-center gap-1 p-2 rounded-lg text-slate-400 hover:text-purple-400 hover:bg-white/5 transition-all">
+                    <Monitor size={16} />
+                    <span className="text-[10px] font-bold uppercase tracking-widest">Uses</span>
+                  </Link>
+                  <Link to="/contact" className="flex flex-col items-center gap-1 p-2 rounded-lg text-slate-400 hover:text-purple-400 hover:bg-white/5 transition-all">
+                    <Send size={16} />
+                    <span className="text-[10px] font-bold uppercase tracking-widest">Contact</span>
+                  </Link>
               </div>
           </div>
 
@@ -247,7 +274,7 @@ export default function Home() {
           {/* 3. PROJECTS */}
           <section id="projects">
             <SectionHeader title="Selected Works" icon={Hash} />
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {PROJECTS.map((project, idx) => (
                 <LiquidCard 
                   key={idx} 
@@ -261,12 +288,12 @@ export default function Home() {
                       </div>
                       <ArrowUpRight size={16} className="text-slate-500 group-hover:text-white transition-colors" />
                     </div>
-                    <h3 className={`font-bold text-white mb-2 ${idx === 0 ? 'text-2xl' : 'text-base'}`}>{project.title}</h3>
+                    <h3 className={`font-bold text-white mb-2 ${idx === 0 ? 'text-2xl' : 'text-lg'}`}>{project.title}</h3>
                     <span className="text-[10px] font-mono text-slate-400 uppercase mb-3 block">{project.category}</span>
                     <p className="text-xs text-slate-200 leading-relaxed mb-4 flex-grow font-medium">{project.description}</p>
                   </div>
                   <div className="flex gap-2 mt-auto pt-4 border-t border-white/10">
-                    {project.tags.slice(0, idx === 0 ? 4 : 2).map(tag => (
+                    {project.tags.slice(0, idx === 0 ? 4 : 3).map(tag => (
                       <span key={tag} className="text-[9px] px-2 py-1 bg-white/5 border border-white/5 rounded text-slate-400 font-mono">
                         {tag}
                       </span>

@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
 import { ArrowLeft, Calendar } from 'lucide-react';
 import { posts } from './posts';
 import SEO from './components/SEO';
@@ -35,7 +39,7 @@ export default function BlogPostPage() {
         description={post.description} 
         type="article"
       />
-      <Link to="/blog" className="inline-flex items-center gap-2 text-slate-400 hover:text-white mb-8 transition-colors text-sm font-bold uppercase tracking-widest">
+      <Link to="/blog" className="inline-flex items-center gap-2 text-slate-400 hover:text-white mb-8 transition-colors text-sm font-bold uppercase tracking-widest text-left">
         <ArrowLeft size={16} /> Back to Blog
       </Link>
       
@@ -49,22 +53,46 @@ export default function BlogPostPage() {
         </div>
         
         <ReactMarkdown 
+            remarkPlugins={[remarkGfm, remarkMath]}
+            rehypePlugins={[rehypeKatex]}
             components={{
                 h1: ({node, ...props}) => <h1 className="text-2xl font-bold text-white mt-8 mb-4 font-serif" {...props} />,
                 h2: ({node, ...props}) => <h2 className="text-xl font-bold text-white mt-8 mb-4 font-serif" {...props} />,
                 p: ({node, ...props}) => <p className="text-slate-300 leading-relaxed mb-4" {...props} />,
                 ul: ({node, ...props}) => <ul className="list-disc list-inside text-slate-300 mb-4 space-y-2" {...props} />,
+                ol: ({node, ...props}) => <ol className="list-decimal list-inside text-slate-300 mb-4 space-y-2" {...props} />,
                 li: ({node, ...props}) => <li className="ml-4" {...props} />,
                 a: ({node, ...props}) => <a className="text-purple-400 hover:text-purple-300 underline underline-offset-4" {...props} />,
                 strong: ({node, ...props}) => <strong className="font-bold text-white" {...props} />,
-                code: ({node, inline, className, children, ...props}) => {
-                    if (inline) {
-                        return <code className="bg-white/10 px-1.5 py-0.5 rounded text-sm font-mono text-purple-300" {...props}>{children}</code>;
+                table: ({node, ...props}) => (
+                    <div className="overflow-x-auto my-8 rounded-lg border border-white/10">
+                        <table className="min-w-full divide-y divide-white/10" {...props} />
+                    </div>
+                ),
+                thead: ({node, ...props}) => <thead className="bg-white/5" {...props} />,
+                th: ({node, ...props}) => <th className="px-4 py-3 text-left text-xs font-bold text-slate-300 uppercase tracking-wider" {...props} />,
+                td: ({node, ...props}) => <td className="px-4 py-3 text-sm text-slate-400 border-t border-white/5" {...props} />,
+                img: ({node, ...props}) => {
+                    let src = props.src;
+                    if (src && src.startsWith('/') && !src.startsWith('//')) {
+                        src = `${import.meta.env.BASE_URL}${src.slice(1)}`;
                     }
-                    
+                    return <img {...props} src={src} className="rounded-lg border border-white/10 shadow-lg my-8 w-full" />;
+                },
+                pre: ({children, ...props}) => {
+                    // Extract text for copy button
+                    let codeText = "";
+                    if (React.isValidElement(children)) {
+                         if (typeof children.props.children === 'string') {
+                             codeText = children.props.children;
+                         } else if (Array.isArray(children.props.children)) {
+                             codeText = children.props.children.join('');
+                         }
+                    }
+
                     const [copied, setCopied] = React.useState(false);
                     const handleCopy = () => {
-                        navigator.clipboard.writeText(String(children).replace(/\n$/, ''));
+                        navigator.clipboard.writeText(codeText);
                         setCopied(true);
                         setTimeout(() => setCopied(false), 2000);
                     };
@@ -78,11 +106,14 @@ export default function BlogPostPage() {
                             >
                                 {copied ? 'Copied!' : 'Copy'}
                             </button>
-                            <code className="block bg-[#1e1b29] border border-white/10 p-4 rounded-lg text-sm font-mono text-slate-300 overflow-x-auto" {...props}>
+                            <pre className="block bg-[#1e1b29] border border-white/10 p-4 rounded-lg text-sm font-mono text-slate-300 overflow-x-auto [&>code]:bg-transparent [&>code]:p-0 [&>code]:text-inherit" {...props}>
                                 {children}
-                            </code>
+                            </pre>
                         </div>
                     );
+                },
+                code: ({node, inline, className, children, ...props}) => {
+                    return <code className="bg-white/10 px-1.5 py-0.5 rounded text-sm font-mono text-purple-300" {...props}>{children}</code>;
                 }
             }}
         >

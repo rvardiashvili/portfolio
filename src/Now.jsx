@@ -38,13 +38,13 @@ export default function Now() {
                       <GraduationCap size={32} />
                    </div>
                    <div>
-                      <h3 className="text-xl font-bold text-white mb-2">University Thesis & Graduation</h3>
+                      <h3 className="text-xl font-bold text-white mb-2">Research Assistant @ Constructor University</h3>
                       <p className="text-slate-300 leading-relaxed mb-4">
-                        My primary focus right now is completing my Bachelor's thesis. I am in the final stretch of my degree at Constructor University and preparing for graduation in <strong>January 2026</strong>.
+                        I am now working full-time as a Research Assistant in Prof. Dr. Peter Baumann's research group. My focus is on advancing high-performance geospatial systems and contributing to scientific publications in the field.
                       </p>
                       <div className="flex gap-2">
-                         <span className="text-[10px] px-2 py-1 bg-white/5 border border-white/5 rounded text-slate-400 font-mono uppercase">Deadline: Dec 2025</span>
-                         <span className="text-[10px] px-2 py-1 bg-white/5 border border-white/5 rounded text-slate-400 font-mono uppercase">Status: Writing</span>
+                         <span className="text-[10px] px-2 py-1 bg-white/5 border border-white/5 rounded text-slate-400 font-mono uppercase">Status: Researching</span>
+                         <span className="text-[10px] px-2 py-1 bg-white/5 border border-white/5 rounded text-slate-400 font-mono uppercase">Focus: Geospatial Systems</span>
                       </div>
                    </div>
                 </div>

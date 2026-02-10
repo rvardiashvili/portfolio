@@ -4,6 +4,7 @@ import { ArtsyBackground } from './components/UI';
 import Home from './Home';
 import Blog from './Blog';
 import BlogPostPage from './BlogPostPage';
+import ProjectPage from './ProjectPage';
 import Uses from './Uses';
 import Contact from './Contact';
 import NotFound from './NotFound';
@@ -110,6 +111,7 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPostPage />} />
+              <Route path="/project/:slug" element={<ProjectPage />} />
               <Route path="/uses" element={<Uses />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/now" element={<Now />} />

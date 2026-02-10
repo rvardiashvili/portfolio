@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 /* --- BACKGROUND: TWILIGHT STUDIO --- */
 export const ArtsyBackground = () => {
@@ -123,8 +124,16 @@ export const ArtsyBackground = () => {
 
 /* --- LIQUID GLASS UI --- */
 export const LiquidCard = ({ children, className = "", href }) => {
-  const Wrapper = href ? 'a' : 'div';
-  const props = href ? { href, target: "_blank", rel: "noreferrer" } : {};
+  const isInternal = href && href.startsWith('/');
+  const Wrapper = isInternal ? Link : (href ? 'a' : 'div');
+  
+  let props = {};
+  if (isInternal) {
+    props = { to: href };
+  } else if (href) {
+    props = { href, target: "_blank", rel: "noreferrer" };
+  }
+
   const cardRef = useRef(null);
   const glowRef = useRef(null);
 

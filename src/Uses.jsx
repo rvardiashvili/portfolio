@@ -26,6 +26,8 @@ export default function Uses() {
   ];
 
   const software = [
+    { name: "AIRA", desc: "My local AI assistant. Powered by Ollama and PyQt6." },
+    { name: "Orchard", desc: "Native iCloud sync for Linux. Built with Python and FUSE." },
     { name: "VS Code", desc: "My primary code editor. Customized with the Dracula theme." },
     { name: "IntelliJ IDEA", desc: "Go-to IDE for Java/JVM development." },
     { name: "Postman", desc: "For API development, testing, and documentation." },

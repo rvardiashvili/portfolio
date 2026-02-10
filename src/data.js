@@ -7,7 +7,7 @@ export const PERSONAL_INFO = {
   linkedin: "https://www.linkedin.com/in/rvardiashvili",
   spotify: "https://open.spotify.com/user/gze4xxzme1e1f1ty1kt32kuot?si=d7afc329aef74d1d",
   cv_link: "https://drive.google.com/uc?export=download&id=14wRpsiVqvTm4ykE0_I3yxFO6BjdnYV0x",
-  about: "I engineer high-performance systems where precision meets scale. Blending academic depth with practical backend expertise, I bridge the gap between raw system efficiency and modern cloud infrastructure. From optimizing gigapixel satellite data pipelines to building robust enterprise integrations, I design solutions that solve complex problems with elegance and speed.",
+  about: "I engineer high-performance systems where precision meets scale. Blending academic depth with practical backend expertise, I bridge the gap between raw system efficiency and modern cloud infrastructure. Recently, I've been focused on building local-first Linux tools that bring AI and cloud ecosystems directly to the desktop.",
   tagline: "Engineering Intelligence."
 };
 
@@ -16,7 +16,7 @@ export const EDUCATION = [
     school: "Constructor University",
     degree: "B.Sc. Computer Science",
     location: "Bremen, Germany",
-    period: "2022 - Jan 2026",
+    period: "2022 - 2026 (Graduated)",
     desc: ""
   },
   {
@@ -29,6 +29,14 @@ export const EDUCATION = [
 ];
 
 export const EXPERIENCE = [
+  {
+    company: "Constructor University",
+    role: "Research Assistant",
+    period: "Feb 2026 - Present",
+    location: "Bremen, Germany",
+    description: "Working full-time as a Research Assistant in Prof. Dr. Peter Baumann's research group. Focused on scientific research and the development of high-performance geospatial data systems.",
+    tags: ["Research", "Computer Science", "Systems"]
+  },
   {
     company: "Softgen",
     role: "Backend Developer",
@@ -49,35 +57,35 @@ export const EXPERIENCE = [
 
 export const PROJECTS = [
   {
-    title: "GeoTiff Pipeline",
-    category: "AI / Data",
-    description: "Memory-efficient pipeline for gigapixel satellite image processing. Optimized for high-throughput analysis using multi-threaded producer-consumer architecture.",
+    title: "GSIP",
+    category: "AI / Engineering",
+    description: "My Bachelor's thesis: A high-performance inference pipeline for gigapixel satellite imagery. Solves 'grid artifacts' using seamless reconstruction and dynamic memory management.",
     tech: "Python",
-    tags: ["PyTorch", "Rasterio", "NumPy"],
-    link: "https://github.com/rvardiashvili/GeoTiff-Scalable-Analysis-Pipeline"
+    tags: ["PyTorch", "Geospatial", "System Design"],
+    link: "/project/gsip"
   },
   {
-    title: "RSGE API Wrapper",
-    category: "Integration",
-    description: "Robust Java integration for automating interactions with the Georgian Revenue Service.",
-    tech: "Java",
-    tags: ["Java", "API", "Automation"],
-    link: "https://github.com/rvardiashvili/rsge-api-java"
+    title: "AIRA",
+    category: "AI / Productivity",
+    description: "A native, local-first AI assistant for Linux. Integrates deep system tools (file indexing, RAG) with a minimalist UI powered by Ollama and PyQt6.",
+    tech: "Python",
+    tags: ["PyQt6", "Ollama", "RAG", "Local-First"],
+    link: "/project/aira"
   },
   {
-    title: "Web Dev Course",
-    category: "Education",
-    description: "Comprehensive collection of web development resources and coursework.",
-    tech: "Web",
-    tags: ["React", "JS"],
-    link: "https://github.com/rvardiashvili/web-development-course"
+    title: "Orchard",
+    category: "System / Cloud",
+    description: "A robust FUSE filesystem that mounts iCloud Drive on Linux. Features optimistic syncing, sparse caching for large files, and conflict resolution.",
+    tech: "Python",
+    tags: ["FUSE", "SQLite", "Sync Engine"],
+    link: "/project/orchard"
   }
 ];
 
 export const BOOKS = [
   { title: "Mistborn", author: "B. Sanderson" },
   { title: "Tress of Emerald Sea", author: "B. Sanderson" },
-  { title: "Metro 2033", author: "D. Glukhovsky" }
+  { title: "Homo Deus", author: "Yuval Noah Harari" }
 ];
 
 const BASE_URL = import.meta.env.BASE_URL;

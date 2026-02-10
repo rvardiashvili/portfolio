@@ -2,10 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+html, body {
   margin: 0;
   padding: 0;
   background-color: #1e1b29;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 /* Global Custom Scrollbar */
