@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-02-10",
+    "commits": 6,
+    "additions": 4313,
+    "deletions": 940,
+    "repos": [
+      "rvardiashvili/portfolio",
+      "rvardiashvili/GSIP"
+    ],
+    "summary": "Rati went on a 4,000-line tear today, slashing GSIP’s RAM usage by 4x and shipping a new GTK GUI. He even found time to polish his portfolio between those massive architectural overhauls."
+  },
+  {
     "date": "2026-02-06",
     "commits": 4,
     "additions": 359,
@@ -58,15 +69,5 @@
       "rvardiashvili/Orchard"
     ],
     "summary": "With nearly 200 lines of code in Orchard, Rati tackled the nightmare of intermittent connections, implementing offline persistence and a brutal \"local wins\" conflict resolution strategy via pre-emptive remote deletes."
-  },
-  {
-    "date": "2025-12-31",
-    "commits": 2,
-    "additions": 899,
-    "deletions": 804,
-    "repos": [
-      "rvardiashvili/Orchard"
-    ],
-    "summary": "Rati wrapped up the year with a nearly 1,700-line bang in *Orchard*, perfecting the sync engine with shadow state and making sure the exhaustive architecture docs matched the new reality."
   }
 ]
