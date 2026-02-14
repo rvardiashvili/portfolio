@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-02-13",
+    "commits": 7,
+    "additions": 228,
+    "deletions": 81,
+    "repos": [
+      "rvardiashvili/GSIP"
+    ],
+    "summary": "Rati spent his day wrestling GSIP’s multi-GPU setups into submission, squashing device selection bugs and fine-tuning ZOR calculations. He even found time to polish benchmarks—all in a productive, 200-plus line shift."
+  },
+  {
     "date": "2026-02-11",
     "commits": 1,
     "additions": 132,
@@ -59,15 +69,5 @@
       "rvardiashvili/AIRA"
     ],
     "summary": "Rati delivered a colossal architectural overhaul to AIRA, migrating memory to ChromaDB and SQLite while adding system-wide theming and Linux file manager hooks in a nearly 2,000-line push."
-  },
-  {
-    "date": "2026-01-02",
-    "commits": 2,
-    "additions": 2221,
-    "deletions": 229,
-    "repos": [
-      "rvardiashvili/Orchard"
-    ],
-    "summary": "Rati wasn't messing around; he shipped 2,200 lines to give Orchard serious chops: sparse sync, rock-solid threading, custom desktop emblems, and a shiny new GTK control panel."
   }
 ]
