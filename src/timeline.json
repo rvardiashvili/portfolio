@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-02-14",
+    "commits": 1,
+    "additions": 1895,
+    "deletions": 487,
+    "repos": [
+      "rvardiashvili/GSIP"
+    ],
+    "summary": "Rati spent Valentine’s Day dropping nearly 2,000 lines of love into GSIP, trading fragmented scripts for a slick unified CLI and a much more robust, matrix-ready Studio GUI."
+  },
+  {
     "date": "2026-02-13",
     "commits": 7,
     "additions": 228,
@@ -59,15 +69,5 @@
       "rvardiashvili/kickstart.nvim"
     ],
     "summary": "Rati’s busy perfecting kickstart.nvim, adding over 650 lines to unify his AI setup while silencing noisy Python diagnostics. He's clearly prioritizing a cleaner, smarter workflow with that substantial code refresh."
-  },
-  {
-    "date": "2026-01-09",
-    "commits": 1,
-    "additions": 1956,
-    "deletions": 644,
-    "repos": [
-      "rvardiashvili/AIRA"
-    ],
-    "summary": "Rati delivered a colossal architectural overhaul to AIRA, migrating memory to ChromaDB and SQLite while adding system-wide theming and Linux file manager hooks in a nearly 2,000-line push."
   }
 ]
