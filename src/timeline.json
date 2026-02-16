@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-02-15",
+    "commits": 2,
+    "additions": 455,
+    "deletions": 325,
+    "repos": [
+      "rvardiashvili/GSIP"
+    ],
+    "summary": "Rati gave GSIP a massive DX facelift, consolidating the CLI and rewriting the \"Developer Bible\" across 800 lines of churn. He’s successfully turned the ecosystem from a complex puzzle into a streamlined playground."
+  },
+  {
     "date": "2026-02-14",
     "commits": 1,
     "additions": 1895,
@@ -59,15 +69,5 @@
       "rvardiashvili/rvardiashvili"
     ],
     "summary": "Rati tackled the tedious but necessary task of updating his GitHub profile, ensuring his academic status and showcased project links were sharp and finally badge-free."
-  },
-  {
-    "date": "2026-01-12",
-    "commits": 3,
-    "additions": 656,
-    "deletions": 251,
-    "repos": [
-      "rvardiashvili/kickstart.nvim"
-    ],
-    "summary": "Rati’s busy perfecting kickstart.nvim, adding over 650 lines to unify his AI setup while silencing noisy Python diagnostics. He's clearly prioritizing a cleaner, smarter workflow with that substantial code refresh."
   }
 ]
