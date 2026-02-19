@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-02-18",
+    "commits": 4,
+    "additions": 259,
+    "deletions": 85,
+    "repos": [
+      "rvardiashvili/GSIP"
+    ],
+    "summary": "Rati pushed a hefty 259 lines to GSIP, deploying dynamic tiling to keep the GPU sweating. Between clarifying Frontier Expansion and killing \"zor doubling,\" he’s ensuring the project is as efficient as it is polished."
+  },
+  {
     "date": "2026-02-15",
     "commits": 2,
     "additions": 455,
@@ -59,15 +69,5 @@
       "rvardiashvili/rasdaman-mcp"
     ],
     "summary": "Rati finalized and committed his significant initial investigation report for `rasdaman-mcp`, churning 359 lines of analysis to officially close out the project’s first major milestone."
-  },
-  {
-    "date": "2026-02-05",
-    "commits": 2,
-    "additions": 39,
-    "deletions": 32,
-    "repos": [
-      "rvardiashvili/rvardiashvili"
-    ],
-    "summary": "Rati tackled the tedious but necessary task of updating his GitHub profile, ensuring his academic status and showcased project links were sharp and finally badge-free."
   }
 ]
