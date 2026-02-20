@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-02-19",
+    "commits": 1,
+    "additions": 269,
+    "deletions": 83,
+    "repos": [
+      "rvardiashvili/GSIP"
+    ],
+    "summary": "Rati is weaving some high-performance magic into GSIP, dropping a substantial 350-line commit to experiment with GPU stitching. He’s clearly not afraid of a little heavy lifting to speed things up."
+  },
+  {
     "date": "2026-02-18",
     "commits": 4,
     "additions": 259,
@@ -59,15 +69,5 @@
       "rvardiashvili/GSIP"
     ],
     "summary": "Rati went on a 4,000-line tear today, slashing GSIP’s RAM usage by 4x and shipping a new GTK GUI. He even found time to polish his portfolio between those massive architectural overhauls."
-  },
-  {
-    "date": "2026-02-06",
-    "commits": 4,
-    "additions": 359,
-    "deletions": 214,
-    "repos": [
-      "rvardiashvili/rasdaman-mcp"
-    ],
-    "summary": "Rati finalized and committed his significant initial investigation report for `rasdaman-mcp`, churning 359 lines of analysis to officially close out the project’s first major milestone."
   }
 ]
