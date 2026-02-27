@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-02-26",
+    "commits": 6,
+    "additions": 531,
+    "deletions": 459,
+    "repos": [
+      "rvardiashvili/GSIP"
+    ],
+    "summary": "Rati was deep in the GSIP weeds today, churning through nearly 1,000 lines to add py-spy profiling and refactor GPU logic. He's standardizing BigEarthNet readers, ensuring those S1-only models finally behave."
+  },
+  {
     "date": "2026-02-20",
     "commits": 12,
     "additions": 5708,
@@ -58,15 +68,5 @@
       "rvardiashvili/GSIP"
     ],
     "summary": "Rati spent his day wrestling GSIP’s multi-GPU setups into submission, squashing device selection bugs and fine-tuning ZOR calculations. He even found time to polish benchmarks—all in a productive, 200-plus line shift."
-  },
-  {
-    "date": "2026-02-11",
-    "commits": 1,
-    "additions": 132,
-    "deletions": 12,
-    "repos": [
-      "rvardiashvili/GSIP"
-    ],
-    "summary": "Rati beefed up GSIP today, adding 130+ lines to ensure his benchmark generation is fully configured and comprehensive. He’s clearly not leaving any performance metrics to chance."
   }
 ]
