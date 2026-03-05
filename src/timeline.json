@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-03-04",
+    "commits": 2,
+    "additions": 147,
+    "deletions": 71,
+    "repos": [
+      "rvardiashvili/GSIP"
+    ],
+    "summary": "Rati banished visual artifacts from GSIP today, swapping manual tiling math for a slick \"overlap\" flag and Hann-window blending. Touching over 200 lines, he’s making seamless data streaming look deceptively easy."
+  },
+  {
     "date": "2026-03-03",
     "commits": 1,
     "additions": 171,
@@ -58,15 +68,5 @@
       "rvardiashvili/GSIP"
     ],
     "summary": "Rati gave GSIP a massive DX facelift, consolidating the CLI and rewriting the \"Developer Bible\" across 800 lines of churn. He’s successfully turned the ecosystem from a complex puzzle into a streamlined playground."
-  },
-  {
-    "date": "2026-02-14",
-    "commits": 1,
-    "additions": 1895,
-    "deletions": 487,
-    "repos": [
-      "rvardiashvili/GSIP"
-    ],
-    "summary": "Rati spent Valentine’s Day dropping nearly 2,000 lines of love into GSIP, trading fragmented scripts for a slick unified CLI and a much more robust, matrix-ready Studio GUI."
   }
 ]
