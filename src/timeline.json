@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-03-11",
+    "commits": 2,
+    "additions": 353,
+    "deletions": 52,
+    "repos": [
+      "rvardiashvili/GSIP"
+    ],
+    "summary": "Rati buffed GSIP with 350+ lines today, introducing \"Skip\" and \"Mirror\" modes to handle data gaps like a pro while strictly enforcing a four-patch minimum. No pixel gets left behind on his watch!"
+  },
+  {
     "date": "2026-03-05",
     "commits": 9,
     "additions": 2012,
@@ -58,15 +68,5 @@
       "rvardiashvili/GSIP"
     ],
     "summary": "Rati is weaving some high-performance magic into GSIP, dropping a substantial 350-line commit to experiment with GPU stitching. He’s clearly not afraid of a little heavy lifting to speed things up."
-  },
-  {
-    "date": "2026-02-18",
-    "commits": 4,
-    "additions": 259,
-    "deletions": 85,
-    "repos": [
-      "rvardiashvili/GSIP"
-    ],
-    "summary": "Rati pushed a hefty 259 lines to GSIP, deploying dynamic tiling to keep the GPU sweating. Between clarifying Frontier Expansion and killing \"zor doubling,\" he’s ensuring the project is as efficient as it is polished."
   }
 ]
