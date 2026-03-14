@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-03-13",
+    "commits": 1,
+    "additions": 50,
+    "deletions": 28,
+    "repos": [
+      "rvardiashvili/GSIP"
+    ],
+    "summary": "Rati gave GSIP a surgical tune-up today, fixing tiling compatibility and making halos optional. With 78 lines of focused changes, he’s ensuring his spatial logic is as flexible as it is precise."
+  },
+  {
     "date": "2026-03-11",
     "commits": 2,
     "additions": 353,
@@ -58,15 +68,5 @@
       "rvardiashvili/GSIP"
     ],
     "summary": "Rati went on a massive 9,000-line tear through GSIP, shipping experimental GPU stitching and Prithvi model integration. He’s clearly in the zone, juggling heavy refactors and merge conflicts like a geospatial pro."
-  },
-  {
-    "date": "2026-02-19",
-    "commits": 1,
-    "additions": 269,
-    "deletions": 83,
-    "repos": [
-      "rvardiashvili/GSIP"
-    ],
-    "summary": "Rati is weaving some high-performance magic into GSIP, dropping a substantial 350-line commit to experiment with GPU stitching. He’s clearly not afraid of a little heavy lifting to speed things up."
   }
 ]
