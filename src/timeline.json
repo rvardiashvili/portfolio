@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-03-21",
+    "commits": 16,
+    "additions": 349,
+    "deletions": 1271,
+    "repos": [
+      "bloom-linux/bloom-iso",
+      "bloom-linux/bloom-shell",
+      "bloom-linux/bloom-packages"
+    ],
+    "summary": "Rati nuked 1,271 lines of bloat today, splitting the bloom-shell bar to solve input woes while automating CI releases. He’s effectively streamlining the bloom-linux ecosystem by deleting code faster than he writes it."
+  },
+  {
     "date": "2026-03-15",
     "commits": 1,
     "additions": 830,
@@ -58,15 +70,5 @@
       "rvardiashvili/GSIP"
     ],
     "summary": "Rati’s teaching GSIP how to swim today, adding prithvi_flood support and input flexibility across a solid 171 new lines. He’s making the adapter as versatile as it is robust."
-  },
-  {
-    "date": "2026-02-26",
-    "commits": 6,
-    "additions": 531,
-    "deletions": 459,
-    "repos": [
-      "rvardiashvili/GSIP"
-    ],
-    "summary": "Rati was deep in the GSIP weeds today, churning through nearly 1,000 lines to add py-spy profiling and refactor GPU logic. He's standardizing BigEarthNet readers, ensuring those S1-only models finally behave."
   }
 ]
