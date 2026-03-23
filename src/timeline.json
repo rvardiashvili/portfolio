@@ -1,15 +1,29 @@
 [
   {
+    "date": "2026-03-22",
+    "commits": 20,
+    "additions": 3893,
+    "deletions": 1067,
+    "repos": [
+      "bloom-linux/bloom-shell",
+      "rvardiashvili/GSIP",
+      "bloom-linux/bloom-installer",
+      "bloom-linux/bloom-iso",
+      "bloom-linux/bloom-packages",
+      "bloom-linux/bloom-settings"
+    ],
+    "summary": "Rati’s \"Bloom\" ecosystem just had a 3,800-line growth spurt; he scrapped Waybar for a custom eww island, built a GTK4 greeter from scratch, and overhauled the settings app into a powerhouse of desktop customization."
+  },
+  {
     "date": "2026-03-21",
-    "commits": 16,
-    "additions": 349,
-    "deletions": 1271,
+    "commits": 11,
+    "additions": 325,
+    "deletions": 1261,
     "repos": [
       "bloom-linux/bloom-iso",
-      "bloom-linux/bloom-shell",
-      "bloom-linux/bloom-packages"
+      "bloom-linux/bloom-shell"
     ],
-    "summary": "Rati nuked 1,271 lines of bloat today, splitting the bloom-shell bar to solve input woes while automating CI releases. He’s effectively streamlining the bloom-linux ecosystem by deleting code faster than he writes it."
+    "summary": "Rati nuked over 1,200 lines of bloat from bloom-iso and bloom-shell, fixing eww input gremlins and automating ISO releases—proving he’s a master of addition by subtraction in the Bloom ecosystem."
   },
   {
     "date": "2026-03-15",
@@ -60,15 +74,5 @@
       "rvardiashvili/GSIP"
     ],
     "summary": "Rati banished visual artifacts from GSIP today, swapping manual tiling math for a slick \"overlap\" flag and Hann-window blending. Touching over 200 lines, he’s making seamless data streaming look deceptively easy."
-  },
-  {
-    "date": "2026-03-03",
-    "commits": 1,
-    "additions": 171,
-    "deletions": 41,
-    "repos": [
-      "rvardiashvili/GSIP"
-    ],
-    "summary": "Rati’s teaching GSIP how to swim today, adding prithvi_flood support and input flexibility across a solid 171 new lines. He’s making the adapter as versatile as it is robust."
   }
 ]
