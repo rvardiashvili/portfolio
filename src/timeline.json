@@ -16,14 +16,14 @@
   },
   {
     "date": "2026-03-21",
-    "commits": 11,
-    "additions": 325,
+    "commits": 10,
+    "additions": 271,
     "deletions": 1261,
     "repos": [
       "bloom-linux/bloom-iso",
       "bloom-linux/bloom-shell"
     ],
-    "summary": "Rati nuked over 1,200 lines of bloat from bloom-iso and bloom-shell, fixing eww input gremlins and automating ISO releases—proving he’s a master of addition by subtraction in the Bloom ecosystem."
+    "summary": "Rati nuked 1,200+ lines today, elegantly splitting Bloom's UI windows to kill input bugs and wiring up GitHub Actions. He’s effectively traded Waybar clutter for a lean, automated ISO delivery pipeline."
   },
   {
     "date": "2026-03-15",
