@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-04-13",
+    "commits": 11,
+    "additions": 4640,
+    "deletions": 1241,
+    "repos": [
+      "rvardiashvili/GSIP"
+    ],
+    "summary": "Rati went on a 4,600-line rampage through GSIP, overhauling DataProviders and cloud masking. He’s officially turned the repo into a library-ready beast that’s as lean on VRAM as it is mean on pixels."
+  },
+  {
     "date": "2026-04-09",
     "commits": 1,
     "additions": 1167,
@@ -26,14 +36,14 @@
   },
   {
     "date": "2026-03-21",
-    "commits": 9,
-    "additions": 217,
-    "deletions": 1261,
+    "commits": 4,
+    "additions": 12,
+    "deletions": 7,
     "repos": [
       "bloom-linux/bloom-iso",
       "bloom-linux/bloom-shell"
     ],
-    "summary": "Rati performed serious digital surgery today, deleting over 1,200 lines to fix bloom-shell’s input bugs and purge Waybar from bloom-iso. He’s definitely making the Bloom ecosystem much leaner and meaner."
+    "summary": "Rati kept it surgical today, refining bloom-iso and bloom-shell with just twelve precise lines. He smoothed out window behaviors and squashed shell bugs, proving that major UI fixes don’t always require massive codebases."
   },
   {
     "date": "2026-03-15",
@@ -64,15 +74,5 @@
       "rvardiashvili/GSIP"
     ],
     "summary": "Rati buffed GSIP with 350+ lines today, introducing \"Skip\" and \"Mirror\" modes to handle data gaps like a pro while strictly enforcing a four-patch minimum. No pixel gets left behind on his watch!"
-  },
-  {
-    "date": "2026-03-05",
-    "commits": 9,
-    "additions": 2012,
-    "deletions": 594,
-    "repos": [
-      "rvardiashvili/GSIP"
-    ],
-    "summary": "Rati went on a 2,000-line rampage through GSIP, automating complex tiling logic for seamless blending and upgrading adapters for Prithvi. He’s making geospatial analysis look easy, even when the input data goes missing."
   }
 ]
