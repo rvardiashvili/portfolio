@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-04-14",
+    "commits": 10,
+    "additions": 1463,
+    "deletions": 1872,
+    "repos": [
+      "rvardiashvili/GSIP"
+    ],
+    "summary": "Rati performed open-heart surgery on GSIP today, deleting over 1,800 lines to make room for multi-device support and cloud masking. He’s refactored the library into a leaner, hardware-agnostic machine."
+  },
+  {
     "date": "2026-04-13",
     "commits": 11,
     "additions": 4640,
@@ -21,9 +31,9 @@
   },
   {
     "date": "2026-03-22",
-    "commits": 20,
-    "additions": 3893,
-    "deletions": 1067,
+    "commits": 17,
+    "additions": 2583,
+    "deletions": 721,
     "repos": [
       "bloom-linux/bloom-shell",
       "rvardiashvili/GSIP",
@@ -32,7 +42,7 @@
       "bloom-linux/bloom-packages",
       "bloom-linux/bloom-settings"
     ],
-    "summary": "Rati’s \"Bloom\" ecosystem just had a 3,800-line growth spurt; he scrapped Waybar for a custom eww island, built a GTK4 greeter from scratch, and overhauled the settings app into a powerhouse of desktop customization."
+    "summary": "Rati dropped a massive 2,500-line payload into the Bloom Linux ecosystem, shipping a custom GTK4 greeter and meticulously polishing the bloom-shell island until the whole ISO finally hit its purple, high-performance stride."
   },
   {
     "date": "2026-03-21",
@@ -64,15 +74,5 @@
       "rvardiashvili/GSIP"
     ],
     "summary": "Rati gave GSIP a surgical tune-up today, fixing tiling compatibility and making halos optional. With 78 lines of focused changes, he’s ensuring his spatial logic is as flexible as it is precise."
-  },
-  {
-    "date": "2026-03-11",
-    "commits": 2,
-    "additions": 353,
-    "deletions": 52,
-    "repos": [
-      "rvardiashvili/GSIP"
-    ],
-    "summary": "Rati buffed GSIP with 350+ lines today, introducing \"Skip\" and \"Mirror\" modes to handle data gaps like a pro while strictly enforcing a four-patch minimum. No pixel gets left behind on his watch!"
   }
 ]
