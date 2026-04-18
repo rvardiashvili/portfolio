@@ -1,5 +1,29 @@
 [
   {
+    "date": "2026-04-18",
+    "commits": 2,
+    "additions": 6,
+    "deletions": 6,
+    "repos": [
+      "bloom-linux/bloom-installer"
+    ],
+    "summary": "Rati performed surgical micro-fixes on `bloom-installer` today. In just six lines, he banished \"rainbow\" bootloader corruption and finicky syntax errors, proving that even a tiny diff can save the startup UI."
+  },
+  {
+    "date": "2026-04-17",
+    "commits": 14,
+    "additions": 1189,
+    "deletions": 139,
+    "repos": [
+      "bloom-linux/bloom-installer",
+      "bloom-linux/bloom-settings",
+      "bloom-linux/bloom-shell",
+      "rvardiashvili/petal",
+      "bloom-linux/bloom-packages"
+    ],
+    "summary": "Rati dropped a thousand-line masterclass in distro-polishing, ensuring Bloom identifies as its own beast while fixing installer quirks, syncing Rofi themes via symlink magic, and giving the branding a fresh rose-inspired glow-up."
+  },
+  {
     "date": "2026-04-14",
     "commits": 10,
     "additions": 1463,
@@ -11,13 +35,13 @@
   },
   {
     "date": "2026-04-13",
-    "commits": 11,
-    "additions": 4640,
-    "deletions": 1241,
+    "commits": 5,
+    "additions": 1560,
+    "deletions": 970,
     "repos": [
       "rvardiashvili/GSIP"
     ],
-    "summary": "Rati went on a 4,600-line rampage through GSIP, overhauling DataProviders and cloud masking. He’s officially turned the repo into a library-ready beast that’s as lean on VRAM as it is mean on pixels."
+    "summary": "Rati dominated GSIP today, churning through 2,500 lines to consolidate DataProviders and implement per-pixel cloud masking. He even found time to make the project library-ready and silence those pesky semaphore leaks."
   },
   {
     "date": "2026-04-09",
@@ -54,25 +78,5 @@
       "bloom-linux/bloom-shell"
     ],
     "summary": "Rati kept it surgical today, refining bloom-iso and bloom-shell with just twelve precise lines. He smoothed out window behaviors and squashed shell bugs, proving that major UI fixes don’t always require massive codebases."
-  },
-  {
-    "date": "2026-03-15",
-    "commits": 1,
-    "additions": 830,
-    "deletions": 28,
-    "repos": [
-      "rvardiashvili/GSIP"
-    ],
-    "summary": "Rati dropped a hefty 800-line update to GSIP, teaching it to handle Sentinel-2 offsets and optimizing GPU memory so ZoR can dream big without choking your system's RAM."
-  },
-  {
-    "date": "2026-03-13",
-    "commits": 1,
-    "additions": 50,
-    "deletions": 28,
-    "repos": [
-      "rvardiashvili/GSIP"
-    ],
-    "summary": "Rati gave GSIP a surgical tune-up today, fixing tiling compatibility and making halos optional. With 78 lines of focused changes, he’s ensuring his spatial logic is as flexible as it is precise."
   }
 ]
