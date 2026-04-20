@@ -1,5 +1,25 @@
 [
   {
+    "date": "2026-04-20",
+    "commits": 2,
+    "additions": 1891,
+    "deletions": 627,
+    "repos": [
+      "rvardiashvili/GSIP"
+    ],
+    "summary": "Rati catapulted GSIP to v0.2.0 today, pushing nearly 2,000 lines to sync documentation with reality, refine CLI hints, and harden CI. He’s clearly not just coding; he’s meticulously engineering a production-ready machine."
+  },
+  {
+    "date": "2026-04-19",
+    "commits": 13,
+    "additions": 11115,
+    "deletions": 2707,
+    "repos": [
+      "rvardiashvili/GSIP"
+    ],
+    "summary": "Rati practically rewrote GSIP today, dropping 11,000 lines to ship a modular plugin system, YOLO-powered object detection, and hardened CI, effectively turning a niche tool into a production-ready geospatial beast."
+  },
+  {
     "date": "2026-04-18",
     "commits": 2,
     "additions": 6,
@@ -35,13 +55,13 @@
   },
   {
     "date": "2026-04-13",
-    "commits": 5,
-    "additions": 1560,
-    "deletions": 970,
+    "commits": 1,
+    "additions": 318,
+    "deletions": 107,
     "repos": [
       "rvardiashvili/GSIP"
     ],
-    "summary": "Rati dominated GSIP today, churning through 2,500 lines to consolidate DataProviders and implement per-pixel cloud masking. He even found time to make the project library-ready and silence those pesky semaphore leaks."
+    "summary": "Rati gave the GSIP docs a heavy-duty makeover today. Trading 107 old lines for 318 fresh ones in a single commit, he’s proving that writing clear manuals is a high-volume sport."
   },
   {
     "date": "2026-04-09",
@@ -52,31 +72,5 @@
       "rvardiashvili/GSIP"
     ],
     "summary": "Rati went big on GSIP today, dropping over 1,100 lines to launch a new DataProvider API. He’s effectively streamlined the pipeline, allowing programmatic data to bypass intermediate files and stream straight to the GPU."
-  },
-  {
-    "date": "2026-03-22",
-    "commits": 17,
-    "additions": 2583,
-    "deletions": 721,
-    "repos": [
-      "bloom-linux/bloom-shell",
-      "rvardiashvili/GSIP",
-      "bloom-linux/bloom-installer",
-      "bloom-linux/bloom-iso",
-      "bloom-linux/bloom-packages",
-      "bloom-linux/bloom-settings"
-    ],
-    "summary": "Rati dropped a massive 2,500-line payload into the Bloom Linux ecosystem, shipping a custom GTK4 greeter and meticulously polishing the bloom-shell island until the whole ISO finally hit its purple, high-performance stride."
-  },
-  {
-    "date": "2026-03-21",
-    "commits": 4,
-    "additions": 12,
-    "deletions": 7,
-    "repos": [
-      "bloom-linux/bloom-iso",
-      "bloom-linux/bloom-shell"
-    ],
-    "summary": "Rati kept it surgical today, refining bloom-iso and bloom-shell with just twelve precise lines. He smoothed out window behaviors and squashed shell bugs, proving that major UI fixes don’t always require massive codebases."
   }
 ]
