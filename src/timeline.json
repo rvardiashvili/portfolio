@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-05-11",
+    "commits": 1,
+    "additions": 10,
+    "deletions": 12,
+    "repos": [
+      "rvardiashvili/GSIP"
+    ],
+    "summary": "Rati performed a surgical strike on the GSIP Prithvi adapter today, tightening up error handling with a lean update that actually left the codebase two lines lighter than he found it."
+  },
+  {
     "date": "2026-05-07",
     "commits": 1,
     "additions": 3140,
@@ -55,22 +65,12 @@
   },
   {
     "date": "2026-04-14",
-    "commits": 10,
-    "additions": 1463,
-    "deletions": 1872,
+    "commits": 9,
+    "additions": 1368,
+    "deletions": 1318,
     "repos": [
       "rvardiashvili/GSIP"
     ],
-    "summary": "Rati performed open-heart surgery on GSIP today, deleting over 1,800 lines to make room for multi-device support and cloud masking. He’s refactored the library into a leaner, hardware-agnostic machine."
-  },
-  {
-    "date": "2026-04-13",
-    "commits": 1,
-    "additions": 318,
-    "deletions": 107,
-    "repos": [
-      "rvardiashvili/GSIP"
-    ],
-    "summary": "Rati gave the GSIP docs a heavy-duty makeover today. Trading 107 old lines for 318 fresh ones in a single commit, he’s proving that writing clear manuals is a high-volume sport."
+    "summary": "Rati performed open-heart surgery on GSIP, swapping 1,300 lines to centralize data logic and add multi-device support, ensuring his satellite pipeline runs flawlessly on everything from beefy CUDA rigs to MacBooks."
   }
 ]
