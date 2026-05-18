@@ -51,17 +51,15 @@
   },
   {
     "date": "2026-04-17",
-    "commits": 14,
-    "additions": 1189,
-    "deletions": 139,
+    "commits": 4,
+    "additions": 297,
+    "deletions": 33,
     "repos": [
       "bloom-linux/bloom-installer",
       "bloom-linux/bloom-settings",
-      "bloom-linux/bloom-shell",
-      "rvardiashvili/petal",
-      "bloom-linux/bloom-packages"
+      "bloom-linux/bloom-shell"
     ],
-    "summary": "Rati dropped a thousand-line masterclass in distro-polishing, ensuring Bloom identifies as its own beast while fixing installer quirks, syncing Rofi themes via symlink magic, and giving the branding a fresh rose-inspired glow-up."
+    "summary": "Rati is busy purging the \"Arch Linux\" ghost from his distro, pushing nearly 300 lines across bloom-installer, shell, and settings to ensure Bloom’s branding, GRUB configs, and Rofi themes finally behave themselves."
   },
   {
     "date": "2026-04-14",
