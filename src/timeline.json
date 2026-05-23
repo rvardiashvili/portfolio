@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-05-22",
+    "commits": 9,
+    "additions": 162,
+    "deletions": 69,
+    "repos": [
+      "bloom-linux/bloom-packages",
+      "rvardiashvili/GSIP"
+    ],
+    "summary": "Rati spent his nine-commit day wrestling with CI/CD, migrating `bloom-packages` to a self-hosted Forgejo registry while overcoming Arch container quirks and SSL errors, with a quick side-quest into GSIP docs."
+  },
+  {
     "date": "2026-05-11",
     "commits": 1,
     "additions": 10,
@@ -60,15 +71,5 @@
       "bloom-linux/bloom-shell"
     ],
     "summary": "Rati is busy purging the \"Arch Linux\" ghost from his distro, pushing nearly 300 lines across bloom-installer, shell, and settings to ensure Bloom’s branding, GRUB configs, and Rofi themes finally behave themselves."
-  },
-  {
-    "date": "2026-04-14",
-    "commits": 9,
-    "additions": 1368,
-    "deletions": 1318,
-    "repos": [
-      "rvardiashvili/GSIP"
-    ],
-    "summary": "Rati performed open-heart surgery on GSIP, swapping 1,300 lines to centralize data logic and add multi-device support, ensuring his satellite pipeline runs flawlessly on everything from beefy CUDA rigs to MacBooks."
   }
 ]
