@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-06-07",
+    "commits": 2,
+    "additions": 4672,
+    "deletions": 1758,
+    "repos": [
+      "rvardiashvili/Orchard"
+    ],
+    "summary": "Rati dropped a massive 6,400-line update on *Orchard*, transforming the app with a sleek new multi-page control panel, secure passkey auth, and deep iCloud device integration."
+  },
+  {
     "date": "2026-05-22",
     "commits": 1,
     "additions": 57,
@@ -58,17 +68,5 @@
       "bloom-linux/bloom-installer"
     ],
     "summary": "Rati performed surgical micro-fixes on `bloom-installer` today. In just six lines, he banished \"rainbow\" bootloader corruption and finicky syntax errors, proving that even a tiny diff can save the startup UI."
-  },
-  {
-    "date": "2026-04-17",
-    "commits": 4,
-    "additions": 297,
-    "deletions": 33,
-    "repos": [
-      "bloom-linux/bloom-installer",
-      "bloom-linux/bloom-settings",
-      "bloom-linux/bloom-shell"
-    ],
-    "summary": "Rati is busy purging the \"Arch Linux\" ghost from his distro, pushing nearly 300 lines across bloom-installer, shell, and settings to ensure Bloom’s branding, GRUB configs, and Rofi themes finally behave themselves."
   }
 ]
